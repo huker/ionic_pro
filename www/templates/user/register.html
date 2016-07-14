@@ -1,0 +1,21 @@
+<ion-view view-title="Register">
+  <ion-content class="padding" ng-controller="regCtrl">
+    <div class="list">
+      <label class="item item-input">
+        <span class="input-label">邮箱</span>
+        <input type="text" ng-model="email">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">密码</span>
+        <input type="password" ng-model="pwd">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">确认密码</span>
+        <input type="password" ng-model="confirm_pwd">
+      </label>
+      <button class="button button-full button-positive" ng-click="regTest()">
+        注册
+      </button>
+    </div>
+  </ion-content>
+</ion-view>
