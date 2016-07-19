@@ -6,11 +6,17 @@ angular.module('app.routes',[])
         abstract:true,
         templateUrl: "templates/tabs.html"
       })
+      .state('slide',{
+        url:'/slide',
+        templateUrl: "templates/slide.html",
+        controller: "slideCtrl as slide"
+      })
       .state('tabs.home',{
         url:"/home",
         views:{
           'home-tab':{
-            templateUrl:"templates/home.html"
+            templateUrl:"templates/home.html",
+            controller: "homeCtrl as home"
           }
         }
       })
@@ -18,7 +24,8 @@ angular.module('app.routes',[])
         url:"/login",
         views:{
           'home-tab':{
-            templateUrl:"templates/user/login.html"
+            templateUrl:"templates/user/login.html",
+            controller: "signinCtrl as sign"
           }
         }
       })
@@ -26,7 +33,8 @@ angular.module('app.routes',[])
         url:"/register",
         views:{
           'home-tab':{
-            templateUrl:"templates/user/register.html"
+            templateUrl:"templates/user/register.html",
+            controller: "regCtrl as reg"
           }
         }
       })
@@ -39,5 +47,5 @@ angular.module('app.routes',[])
         }
       })
 
-    $urlRouterProvider.otherwise("/tab/home");
+    $urlRouterProvider.otherwise("/slide");
   })

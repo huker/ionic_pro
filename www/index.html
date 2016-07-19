@@ -20,15 +20,19 @@
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
-    <script src="js/router.js"></script>
-    <script src="js/controller.js"></script>
-    <script src="js/service.js"></script>
+    <script src="js/router/router.js"></script>
+    <!--ctrl-->
+    <script src="js/controller/user/userctrl.js"></script>
+    <script src="js/controller/mainctrl.js"></script>
+    <!--service-->
+    <script src="js/service/service.js"></script>
   </head>
   <body ng-app="app">
     <ion-nav-bar class="bar-dark">
       <ion-nav-back-button>
       </ion-nav-back-button>
     </ion-nav-bar>
-    <ion-nav-view></ion-nav-view>
+    <ion-nav-view>
+    </ion-nav-view>
   </body>
 </html>

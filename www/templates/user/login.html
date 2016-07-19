@@ -1,15 +1,15 @@
 <ion-view view-title="Login">
-  <ion-content class="padding" ng-controller="loginCtrl">
+  <ion-content class="padding">
     <div class="list">
       <label class="item item-input">
         <span class="input-label">email</span>
-        <input type="text" ng-model="email">
+        <input type="text" ng-model="sign.email">
       </label>
       <label class="item item-input">
         <span class="input-label">Password</span>
-        <input type="password" ng-model="password">
+        <input type="password" ng-model="sign.password">
       </label>
-      <button class="button button-full button-positive" ng-click="loginTest()">
+      <button class="button button-full button-positive" ng-click="sign.login()">
         login
       </button>
     </div>
