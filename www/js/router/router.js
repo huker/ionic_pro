@@ -4,7 +4,8 @@ angular.module('app.routes',[])
       .state('tabs', {
         url: "/tab",
         abstract:true,
-        templateUrl: "templates/tabs.html"
+        templateUrl: "templates/tabs.html",
+        //controller: "tabCtrl as tab"
       })
       .state('slide',{
         url:'/slide',
@@ -16,7 +17,7 @@ angular.module('app.routes',[])
         views:{
           'home-tab':{
             templateUrl:"templates/home.html",
-            controller: "homeCtrl as home"
+            //controller: "homeCtrl as home"
           }
         }
       })
@@ -25,7 +26,7 @@ angular.module('app.routes',[])
         views:{
           'home-tab':{
             templateUrl:"templates/user/login.html",
-            controller: "signinCtrl as sign"
+            controller: "loginCtrl as login"
           }
         }
       })

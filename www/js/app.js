@@ -6,6 +6,7 @@
 angular.module('app', ['ionic','app.routes','app.controller','app.service']);
 
 angular.module('app.controller', []);
+angular.module('app.service',[]);
 
 angular.module('app')
 .run(function($ionicPlatform) {

@@ -1,4 +1,4 @@
-angular.module('app.service',[])
+angular.module('app.service')
 .factory('ajService',function($http){
   return {
     toLogin:function(data){
