@@ -1,10 +1,17 @@
 angular.module('app.controller')
+  .controller('slideCtrl',slideCtrl);
 
-  .controller('slideCtrl',function($state){
-    this.toHome = function(){
-      $state.go('tabs.home')
-    }
-  })
+slideCtrl.$inject = ['$state'];
+
+function slideCtrl($state){
+  this.toHome = function(){
+    $state.go('tabs.home')
+  }
+}
+
+
+
+
 
 
 

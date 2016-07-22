@@ -1,6 +1,6 @@
 <ion-view view-title="Register">
   <ion-content class="padding">
-    <div class="list">
+    <div class="list" ng-hide="reg.hideRegIpt">
       <label class="item item-input">
         <span class="input-label">邮箱</span>
         <input type="text" ng-model="reg.regmsg.email">
@@ -14,7 +14,50 @@
         <input type="password" ng-model="reg.regmsg.confirm_pwd">
       </label>
       <button class="button button-full button-positive" ng-click="reg.reg()">
-        注册
+        下一步
+      </button>
+      <button class="button button-full button-positive" ng-click="reg.test()">
+        test
+      </button>
+    </div>
+    <div class="list" ng-show="reg.showRegquestion">
+
+      <h5>您的预期回报率为:</h5>
+        <ion-radio ng-repeat="item in reg.select1" ng-model="reg.data.clientSide1" ng-value="item.value" name="first">
+          {{item.text}}
+        </ion-radio>
+      <div class="item item-divider">
+        选中的:{{reg.data.clientSide1}}
+      </div>
+
+      <h5>您能接受的最大亏损为:</h5>
+        <ion-radio ng-repeat="item in reg.select2" ng-model="reg.data.clientSide2" ng-value="item.value" name="second">
+          {{item.text}}
+        </ion-radio>
+      <div class="item item-divider">
+        选中的:{{reg.data.clientSide2}}
+      </div>
+
+      <h5>是否是投顾账号？</h5>
+      <ion-list>
+        <ion-radio ng-repeat="item in reg.select3" ng-model="reg.data.clientSide3" ng-value="item.value" name="third">
+          {{item.text}}
+        </ion-radio>
+      </ion-list>
+      <div class="item item-divider">
+        选中的:{{reg.data.clientSide3}}
+      </div>
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">账户总盈利部分提成比例:</span>
+          <input type="text" ng-model="reg.data.earnPercent" placeholder="20%" required="required">
+        </label>
+      </div>
+      <div class="item item-divider">
+        输入的提成比例:{{reg.data.earnPercent}}
+      </div>
+      <button class="button button-full button-positive" ng-click="reg.gotoRisk()">
+        进入风险等级测评
       </button>
     </div>
   </ion-content>

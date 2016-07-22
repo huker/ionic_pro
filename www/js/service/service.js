@@ -6,6 +6,9 @@ angular.module('app.service')
     },
     toReg:function(data){
       return $http.post('api/user/register',data)
-    }
+    },
+    //getRiskList:function(){
+    //  return $http.get('data.json');
+    //}
   }
 })

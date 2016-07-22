@@ -4,8 +4,10 @@ angular.module('app.controller')
 angular.module('app.controller')
   .controller('regCtrl', regCtrl);
 
+
 loginCtrl.$inject = ['ajService', '$state', '$ionicPopup'];
 regCtrl.$inject = ['ajService', '$state', '$ionicPopup'];
+
 
 function loginCtrl(ajService, $state, $ionicPopup) {
   this.loginmsg = {};
@@ -26,13 +28,51 @@ function loginCtrl(ajService, $state, $ionicPopup) {
 }
 
 function regCtrl(ajService, $state, $ionicPopup) {
-  this.regmsg = {};
-  this.reg = reg;
+  var vm = this;
+  vm.regmsg = {};
+  vm.reg = reg;
+  vm.test = test;
+  vm.gotoRisk = gotoRisk;
+  vm.showRegquestion = false;
+  vm.hideRegIpt = false;
+  vm.select1 = [
+    { text: "3%-5%", value: "one" },
+    { text: "5%-8%", value: "two" },
+    { text: "8%-15%", value: "three" },
+    { text: "15以上%", value: "four" }
+  ];
+  vm.select2 = [
+    { text: "5%以下", value: "one" },
+    { text: "5%-10%", value: "two" },
+    { text: "10%-20%", value: "three" },
+    { text: "20以上%", value: "four" }
+  ];
+  vm.select3 = [
+    { text: "是", value: "true" },
+    { text: "否", value: "false" }
+  ];
+  vm.data = {
+    clientSide1:'one',
+    clientSide2:'one',
+    clientSide3:'true',
+    earnPercent:''
+  };
+
+  function test(){
+    vm.showRegquestion = true;
+    vm.hideRegIpt = true;
+  }
+
+  function gotoRisk(){
+    $state.go('tabs.risk');
+  }
+
   function reg() {
-    var json = JSON.stringify(this.regmsg);
+    var json = JSON.stringify(vm.regmsg);
     ajService.toReg(json).success(function (data) {
       if (data.success) {
         $state.go('tabs.home');
+        //vm.showRegquestion = true;
       } else if (data.errorCode == 8004) {
         $ionicPopup.alert({
           title: '提示',
@@ -58,4 +98,6 @@ function regCtrl(ajService, $state, $ionicPopup) {
 
   }
 }
+
+
 

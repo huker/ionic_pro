@@ -1,0 +1,44 @@
+{
+  "select1":[
+    { "text":"6个月以下","value":"q1a"},
+    { "text":"6个月到1年","value":"q1b"},
+    { "text":"1年到5年","value":"q1c"},
+    { "text":"5年以上","value":"q1d"}
+  ],
+  "select2":[
+    { "text":"资本增长，赚取稍微比银行存款微高的回报","value":"q2a"},
+    { "text":"B","value":"q2b"},
+    { "text":"C","value":"q2c"},
+    { "text":"D","value":"q2d"}
+  ],
+  "select3":[
+    { "text":"3投资经验一般","value":"q3a"},
+    { "text":"投资经验较丰富","value":"q3b"},
+    { "text":"投资经验很有限","value":"q3c"},
+    { "text":"投资经验非常丰富","value":"q3d"}
+  ],
+  "select4":[
+    { "text":"4投资经验一般","value":"q3a"},
+    { "text":"投资经验较丰富","value":"q3b"},
+    { "text":"投资经验很有限","value":"q3c"},
+    { "text":"投资经验非常丰富","value":"q3d"}
+  ],
+  "select5":[
+    { "text":"5投资经验一般","value":"q3a"},
+    { "text":"投资经验较丰富","value":"q3b"},
+    { "text":"投资经验很有限","value":"q3c"},
+    { "text":"投资经验非常丰富","value":"q3d"}
+  ],
+  "select6":[
+    { "text":"6投资经验一般","value":"q3a"},
+    { "text":"投资经验较丰富","value":"q3b"},
+    { "text":"投资经验很有限","value":"q3c"},
+    { "text":"投资经验非常丰富","value":"q3d"}
+  ],
+  "select7":[
+    { "text":"7投资经验一般","value":"q3a"},
+    { "text":"投资经验较丰富","value":"q3b"},
+    { "text":"投资经验很有限","value":"q3c"},
+    { "text":"投资经验非常丰富","value":"q3d"}
+  ]
+}

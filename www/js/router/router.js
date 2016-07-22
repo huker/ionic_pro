@@ -1,4 +1,4 @@
-angular.module('app.routes',[])
+angular.module('app.routes')
   .config(function($stateProvider, $urlRouterProvider){
     $stateProvider
       .state('tabs', {
@@ -36,6 +36,15 @@ angular.module('app.routes',[])
           'home-tab':{
             templateUrl:"templates/user/register.html",
             controller: "regCtrl as reg"
+          }
+        }
+      })
+      .state('tabs.risk',{
+        url:"/risk",
+        views:{
+          'home-tab':{
+            templateUrl:"templates/user/risk.html",
+            controller: "riskCtrl as risk"
           }
         }
       })

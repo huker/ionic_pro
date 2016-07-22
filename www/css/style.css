@@ -6,3 +6,32 @@
   position: absolute;
   bottom: 6rem;
 }
+.timelinebox{
+  border: 1px solid #4b8bf4;
+}
+.timeline_part{
+  display: block;
+  background: #4b8bf4;
+  height: 2em;
+}
+.timeline_part1{
+  width: 14%;
+}
+.timeline_part2{
+  width: 28%;
+}
+.timeline_part3{
+  width: 42%;
+}
+.timeline_part4{
+  width: 56%;
+}
+.timeline_part5{
+  width: 70%;
+}
+.timeline_part6{
+  width: 84%;
+}
+.timeline_part7{
+  width: 100%;
+}
