@@ -1,4 +1,4 @@
-<ion-view view-title="Register">
+<ion-view view-title="风险问卷调查">
   <ion-content class="padding">
   <div class="col-80 col-offset-10 timelinebox">
     <span class="timeline_part" ng-class="{timeline_part1:risk.showRisk==1,timeline_part2:risk.showRisk==2,timeline_part3:risk.showRisk==3,timeline_part4:risk.showRisk==4,timeline_part5:risk.showRisk==5,timeline_part6:risk.showRisk==6,timeline_part7:risk.showRisk==7}">
@@ -9,13 +9,12 @@
       <ion-radio ng-click="risk.getValue()" ng-repeat="item in risk.select" ng-model="risk.riskquestion" ng-value="item.value">
         {{item.text}}
       </ion-radio>
-      <button class="button button-full button-positive" ng-click="risk.prevstep()" ng-hide="risk.hideprev">
-        上一题
-      </button>
       <button class="button button-full button-positive" ng-click="risk.nextstep()">
         继续
       </button>
+      <button class="button button-full button-positive" ng-click="risk.prevstep()" ng-hide="risk.hideprev">
+        上一题
+      </button>
     </div>
-
   </ion-content>
 </ion-view>

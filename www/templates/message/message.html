@@ -1,0 +1,13 @@
+<ion-view view-title="消息">
+  <ion-content class="padding">
+    <div class="card">
+      <div class="item item-text-wrap clearfix" ng-repeat="item in message.msgList">
+        <div style="float: left">
+          <p>{{item.content}}</p>
+          <span>日期：{{item.date}}</span>
+        </div>
+        <a class="button button-positive" style="float: right">查看</a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,67 @@
+<ion-view view-title="Register">
+  <ion-content class="padding">
+  <div class="col-80 col-offset-10 timelinebox">
+    <span class="timeline_part" ng-class="{timeline_part1:risk.showRiskOne,timeline_part2:risk.showRiskTwo,timeline_part3:risk.showRiskThd,timeline_part4:risk.showRiskFour,timeline_part5:risk.showRiskFive}">
+    </span>
+  </div>
+    <div class="list" ng-show="risk.showRiskOne">
+      <h5>Q1:您的预期投资年限有多久？</h5>
+      <ion-radio ng-repeat="item in risk.select1" ng-model="risk.data.riskquestion1" ng-value="item.value" name="q1">
+        {{item.text}}
+      </ion-radio>
+      <h5>Q2:您的投资目标为何？</h5>
+      <ion-radio ng-repeat="item in risk.select2" ng-model="risk.data.riskquestion2" ng-value="item.value" name="q2">
+        {{item.text}}
+      </ion-radio>
+      <button class="button button-full button-positive" ng-click="risk.nextstep1()">
+        继续
+      </button>
+    </div>
+    <div class="list" ng-show="risk.showRiskTwo">
+      <h5>Q3:您的预期投资年限有多久？</h5>
+      <ion-radio ng-repeat="item in risk.select3" ng-model="risk.data.riskquestion3" ng-value="item.value" name="q3">
+        {{item.text}}
+      </ion-radio>
+      <button class="button button-full button-positive" ng-click="risk.nextstep2()">
+        继续
+      </button>
+    </div>
+    <div class="list" ng-show="risk.showRiskThd">
+      <h5>Q4:您的预期投资年限有多久？</h5>
+      <ion-radio ng-repeat="item in risk.select4" ng-model="risk.data.riskquestion4" ng-value="item.value" name="q4">
+        {{item.text}}
+      </ion-radio>
+      <button class="button button-full button-positive" ng-click="risk.nextstep3()">
+        继续
+      </button>
+    </div>
+    <div class="list" ng-show="risk.showRiskFour">
+      <h5>Q5:您的预期投资年限有多久？</h5>
+      <ion-radio ng-repeat="item in risk.select5" ng-model="risk.data.riskquestion5" ng-value="item.value" name="q5">
+        {{item.text}}
+      </ion-radio>
+      <button class="button button-full button-positive" ng-click="risk.nextstep4()">
+        继续
+      </button>
+    </div>
+    <div class="list" ng-show="risk.showRiskFive">
+      <h5>Q6:您的预期投资年限有多久？</h5>
+      <ion-radio ng-repeat="item in risk.select6" ng-model="risk.data.riskquestion6" ng-value="item.value" name="q6">
+        {{item.text}}
+      </ion-radio>
+      <button class="button button-full button-positive" ng-click="risk.nextstep5()">
+        继续
+      </button>
+    </div>
+    <div class="list" ng-show="risk.showRiskSix">
+      <h5>Q7:您的预期投资年限有多久？</h5>
+      <ion-radio ng-repeat="item in risk.select7" ng-model="risk.data.riskquestion7" ng-value="item.value" name="q7">
+        {{item.text}}
+      </ion-radio>
+      <button class="button button-full button-positive" ng-click="risk.nextstep6()">
+        继续
+      </button>
+    </div>
+
+  </ion-content>
+</ion-view>

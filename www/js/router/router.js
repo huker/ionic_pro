@@ -48,6 +48,33 @@ angular.module('app.routes')
           }
         }
       })
+      .state('tabs.account',{
+        url:"/account",
+        views:{
+          'home-tab':{
+            templateUrl:"templates/user/openaccount.html",
+            controller: "accountCtrl as account"
+          }
+        }
+      })
+      .state('tabs.asset',{
+        url:"/asset",
+        views:{
+          'home-tab':{
+            templateUrl:"templates/asset/asset.html",
+            controller: "assetCtrl as asset"
+          }
+        }
+      })
+      .state('tabs.message',{
+        url:"/message",
+        views:{
+          'message-tab':{
+            templateUrl:"templates/message/message.html",
+            controller: "messageCtrl as message"
+          }
+        }
+      })
       .state('tabs.about',{
         url:"/about",
         views:{

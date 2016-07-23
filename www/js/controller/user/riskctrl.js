@@ -5,15 +5,16 @@
 angular.module('app.controller')
   .controller('riskCtrl', riskCtrl);
 
-riskCtrl.$inject = ['$state','ajService'];
+riskCtrl.$inject = ['$scope','$state','ajService','$ionicPopup'];
 
-function riskCtrl($state,ajService){
+function riskCtrl($scope,$state,ajService,$ionicPopup){
   var vm = this;
   vm.nowstep = 0;
   vm.showRisk = 1;   //进度条
   vm.nextstep = nextstep;
   vm.prevstep = prevstep;
   vm.getValue = getValue;
+  vm.checkOver = checkOver;
   vm.hideprev = true;
   vm.riskCheckedArr = {
     "select1":"",
@@ -69,13 +70,15 @@ function riskCtrl($state,ajService){
       { "text":"投资经验非常丰富","value":"d7"}
     ]
   };
-  vm.$watch('nowstep',function(newVal,oldVal){
-    if(newVal == 1 || newVal == 0){
-      vm.hideprev = true;
-    }else{
-      vm.hideprev = true;
-    }
-  })
+  //$scope.$watch('vm.nowstep',function(newVal,oldVal){
+  //  console.log(vm.nowstep);
+  //  console.log(newVal,oldVal)
+    //if(newVal == 1 || newVal == 0){
+    //  vm.hideprev = true;
+    //}else{
+    //  vm.hideprev = false;
+    //}
+  //});
   nextstep();
   //写入value进json
   function getValue(){
@@ -85,6 +88,11 @@ function riskCtrl($state,ajService){
   }
   //下一题
   function nextstep(){
+    if(vm.nowstep==0){
+      vm.hideprev = true;
+    }else{
+      vm.hideprev = false;
+    }
     if(vm.nowstep<7){
       vm.showRisk = vm.nowstep+1;
       var step = "select"+(vm.nowstep+1);
@@ -95,7 +103,7 @@ function riskCtrl($state,ajService){
       }
       vm.nowstep++;
     }else{
-      $state.go('tabs.home');
+      checkOver();
     }
   }
   //上一题
@@ -103,10 +111,34 @@ function riskCtrl($state,ajService){
     // stepTo是将切换的select，先把现在的数据写入，再读切换的选项的选中
     if(vm.nowstep>1){
       vm.nowstep--;
+      if(vm.nowstep==1){
+        vm.hideprev = true;
+      }else{
+        vm.hideprev = false;
+      }
       vm.showRisk = vm.nowstep;
       var stepTo = "select"+vm.nowstep;
       vm.select = vm.book[stepTo];
       vm.riskquestion = vm.riskCheckedArr[stepTo]
+    }
+  }
+  //检查是否全做完
+  function checkOver(){
+    for(var i in vm.riskCheckedArr){
+      var blankitems = 0;
+      if(vm.riskCheckedArr[i] == ''){
+        blankitems++;
+        $ionicPopup.alert({
+          title: '提示',
+          template: '题目没有做完'
+        });
+        break;
+      }
+      if(i == 'select7'){
+        if(blankitems == 0){
+          $state.go('tabs.account');
+        }
+      }
     }
   }
 }

@@ -35,3 +35,36 @@
 .timeline_part7{
   width: 100%;
 }
+
+.assetBox{
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  clear: both;
+}
+.assetBox ul{
+  margin: 0;padding: 1rem 0;
+}
+.assetBox ul li{
+  font-size: 1rem;
+  width: 32%;
+  display: inline-block;
+  border: 1px solid #666666;
+  text-align: center;
+  padding: 0.4rem 0;
+  -webkit-box-shadow: 3px 3px 5px #666666;
+  -moz-box-shadow: 3px 3px 5px #666666;
+  box-shadow: 3px 3px 5px #666666;
+}
+.assetTable{
+  width: 100%;
+  border: 1px solid #cccccc;
+  margin-top: 10px;
+}
+.assetTable td,th{
+  padding: 10px 20px;
+  border-right: 1px solid #cccccc;
+}
+.assetTable tr:nth-of-type(odd){
+  background: #f9f9f9;
+}
