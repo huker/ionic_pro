@@ -1,12 +1,24 @@
-<ion-view view-title="消息">
+<ion-view view-title="交易执行">
   <ion-content class="padding">
     <h4>您的投资经理：XXX</h4>
     <p>向您建议购买投资组合：</p>
-    <ion-list>
-      <ion-checkbox ng-model="filter.red"><a href="#">策略一号</a>建议购买金额：{{}}元</ion-checkbox>
-      <ion-checkbox ng-model="filter.yellow">INTERACTIVE BROKERS</ion-checkbox>
-      <ion-checkbox ng-model="filter.pink">南华期货</ion-checkbox>
-    </ion-list>
+    <!--<ion-list>-->
+      <!--<ion-checkbox ng-repeat="item in message.list">-->
+        <!--<a href="#">{{item.name}}</a>建议购买金额：{{item.money}}元-->
+      <!--</ion-checkbox>-->
+    <!--</ion-list>-->
+    <form>
+      <div ng-repeat="item in message.list" class="msglist">
+        <input type="checkbox" name="msg">
+        <a href="#/tab/message/msgdetail/msgpage">{{item.name}}</a>
+        <span>建议购买金额：{{item.money}}元</span>
+        <br>
+      </div>
+    </form>
+    <div class="msgbottom">
+      <a class="button button-positive" href="#/tab/message/contact">在线联系投资经理</a>
+      <a class="button button-positive" href="#/tab/message/trade">执行交易</a>
+    </div>
   </ion-content>
 </ion-view>
 

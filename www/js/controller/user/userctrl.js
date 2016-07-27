@@ -20,7 +20,7 @@ function loginCtrl(ajService, $state, $ionicPopup) {
       } else {
         $ionicPopup.alert({
           title: '提示',
-          template: '登陆失败重新填写信息'
+          template: '账号/密码错误，请重新填写信息'
         });
       }
     })
@@ -33,8 +33,6 @@ function regCtrl(ajService, $state, $ionicPopup) {
   vm.reg = reg;
   vm.test = test;
   vm.gotoRisk = gotoRisk;
-  vm.showRegquestion = false;
-  vm.hideRegIpt = false;
   vm.select1 = [
     { text: "3%-5%", value: "one" },
     { text: "5%-8%", value: "two" },
@@ -59,8 +57,7 @@ function regCtrl(ajService, $state, $ionicPopup) {
   };
 
   function test(){
-    vm.showRegquestion = true;
-    vm.hideRegIpt = true;
+    $state.go('tabs.investstyle');
   }
 
   function gotoRisk(){
@@ -72,7 +69,6 @@ function regCtrl(ajService, $state, $ionicPopup) {
     ajService.toReg(json).success(function (data) {
       if (data.success) {
         $state.go('tabs.home');
-        //vm.showRegquestion = true;
       } else if (data.errorCode == 8004) {
         $ionicPopup.alert({
           title: '提示',

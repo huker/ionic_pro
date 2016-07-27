@@ -1,6 +1,25 @@
-<ion-view view-title="消息">
+<ion-view view-title="策略详情">
   <ion-content class="padding">
-
+    <h2>{{message.strategy.name}}</h2>
+    <p>起投金额：{{message.strategy.money}}</p>
+    <p>起投金额：{{message.strategy.returnrate}}</p>
+    <return-chart id="strategychart" legend="message.strategy.legend" data="message.strategy.data"></return-chart>
+    <table class="assetTable" border="1px">
+      <tr>
+        <th>资产类别</th><th>细分类型</th><th>配置份额</th><th>配置占比</th>
+      </tr>
+      <tr ng-repeat="item in message.strategy.strategyData">
+        <td>{{item.category}}</td>
+        <td>{{item.detailcategory}}</td>
+        <td>{{item.share}}</td>
+        <td>{{item.rate}}</td>
+      </tr>
+    </table>
+    <div class="msgbottom">
+      <a class="button button-positive" href="#">查看回测</a>
+      <a class="button button-positive" href="#">查看资产明细</a>
+      <a class="button button-positive" href="#/tab/message/trade">执行交易</a>
+    </div>
   </ion-content>
 </ion-view>
 

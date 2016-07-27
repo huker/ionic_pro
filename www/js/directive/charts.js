@@ -70,7 +70,7 @@ function returnChartDireact(ajService) {
     },
     restrict: 'E',
     replace: true,
-    template: '<div style="height:230px"></div>',
+    template: '<div style="height:240px;"></div>',
     link: function ($scope, element, attrs, controller) {
       var option = {
         tooltip: {
@@ -78,7 +78,7 @@ function returnChartDireact(ajService) {
           formatter: "{a} <br/>{b} : {c} ({d}%)"
         },
         legend: {
-          orient: 'vertical',
+          x: 'center',
           bottom: 'bottom',
           data: $scope.legend
         },
@@ -87,7 +87,7 @@ function returnChartDireact(ajService) {
             name: '资产配置',
             type: 'pie',
             radius: '50%',
-            center: ['50%', '30%'],
+            center: ['50%', '35%'],
             data: function(){
               var serie = [];
               for(var i=0;i<$scope.legend.length;i++){

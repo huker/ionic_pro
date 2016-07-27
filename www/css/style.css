@@ -68,3 +68,34 @@
 .assetTable tr:nth-of-type(odd){
   background: #f9f9f9;
 }
+.msgbottom{
+  display: block;
+  margin-top: 1.5rem;
+}
+.msgbottom a{
+  display: inline-block;
+}
+.msglist{
+  width: 100%;
+  padding: 1rem 0.5rem;
+  border: 1px solid #e2e2e2;
+  border-top: none;
+}
+.msglist:first-child{
+  border-top: 1px solid #e2e2e2;
+}
+.msglist input{
+  width: 2rem;
+}
+.detailpagemsg{
+  border: 1px solid #dddddd;
+  padding: 1.2rem 1rem;
+  margin-top: 0.3rem;
+}
+.centerbtn{
+  border: 1px solid #dddddd;
+  line-height: inherit;
+  font-size: 13px ;
+  min-width: 40px;
+  min-height: 30px;
+}

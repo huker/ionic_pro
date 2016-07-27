@@ -12,6 +12,7 @@ angular.module('app.routes')
         templateUrl: "templates/slide.html",
         controller: "slideCtrl as slide"
       })
+      //首页界面下的page
       .state('tabs.home',{
         url:"/home",
         views:{
@@ -22,7 +23,7 @@ angular.module('app.routes')
         }
       })
       .state('tabs.login',{
-        url:"/login",
+        url:"/home/login",
         views:{
           'home-tab':{
             templateUrl:"templates/user/login.html",
@@ -31,7 +32,7 @@ angular.module('app.routes')
         }
       })
       .state('tabs.register',{
-        url:"/register",
+        url:"/home/register",
         views:{
           'home-tab':{
             templateUrl:"templates/user/register.html",
@@ -39,8 +40,17 @@ angular.module('app.routes')
           }
         }
       })
+      .state('tabs.investstyle',{
+        url:"/home/register/investstyle",
+        views:{
+          'home-tab':{
+            templateUrl:"templates/user/investstyle.html",
+            controller: "regCtrl as reg"
+          }
+        }
+      })
       .state('tabs.risk',{
-        url:"/risk",
+        url:"/home/register/investstyle/risk",
         views:{
           'home-tab':{
             templateUrl:"templates/user/risk.html",
@@ -49,7 +59,7 @@ angular.module('app.routes')
         }
       })
       .state('tabs.account',{
-        url:"/account",
+        url:"/home/register/investstyle/risk/account",
         views:{
           'home-tab':{
             templateUrl:"templates/user/openaccount.html",
@@ -58,7 +68,7 @@ angular.module('app.routes')
         }
       })
       .state('tabs.asset',{
-        url:"/asset",
+        url:"/home/asset",
         views:{
           'home-tab':{
             templateUrl:"templates/asset/asset.html",
@@ -66,6 +76,7 @@ angular.module('app.routes')
           }
         }
       })
+      //message页面下的page
       .state('tabs.message',{
         url:"/message",
         views:{
@@ -75,14 +86,60 @@ angular.module('app.routes')
           }
         }
       })
-      .state('tabs.about',{
-        url:"/about",
+      .state('tabs.msgdetail',{
+        url:"/message/msgdetail",
         views:{
-          'about-tab':{
-            templateUrl:"templates/about.html"
+          'message-tab':{
+            templateUrl:"templates/message/msgdetail.html",
+            controller: "messageCtrl as message"
           }
         }
       })
-
+      .state('tabs.contact',{
+        url:"/message/contact",
+        views:{
+          'message-tab':{
+            templateUrl:"templates/message/contact.html",
+            controller: "contactCtrl as contact"
+          }
+        }
+      })
+      .state('tabs.trade',{
+        url:"/message/trade",
+        views:{
+          'message-tab':{
+            templateUrl:"templates/message/trade.html",
+            controller: "messageCtrl as message"
+          }
+        }
+      })
+      .state('tabs.msgpage',{
+        url:"/message/msgdetail/msgpage",
+        views:{
+          'message-tab':{
+            templateUrl:"templates/message/msgdetailpage.html",
+            controller: "messageCtrl as message"
+          }
+        }
+      })
+      .state('tabs.msgstrategy',{
+        url:"/message/msgdetail/msgpage/msgstrategy",
+        views:{
+          'message-tab':{
+            templateUrl:"templates/message/msgstrategy.html",
+            controller: "messageCtrl as message"
+          }
+        }
+      })
+      .state('tabs.center',{
+        url:"/center",
+        views:{
+          'center-tab':{
+            templateUrl:"templates/center/personal.html",
+            controller: "centerCtrl as center"
+          }
+        }
+      })
     $urlRouterProvider.otherwise("/slide");
+
   })

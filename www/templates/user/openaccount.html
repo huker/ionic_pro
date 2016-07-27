@@ -1,23 +1,24 @@
 <ion-view view-title="快捷开户">
   <ion-content class="padding">
     <div class="list">
-      <h2>快捷开户</h2>
+      <h3>海外投行快捷开户</h3>
       <p>上传一份资料，即可快速开通整套账户。</p>
       <ion-list>
         <ion-checkbox ng-model="filter.red">SAXO BANK</ion-checkbox>
         <ion-checkbox ng-model="filter.yellow">INTERACTIVE BROKERS</ion-checkbox>
-        <ion-checkbox ng-model="filter.pink">南华期货</ion-checkbox>
       </ion-list>
       <button class="button button-full button-positive" ng-click="">
         进入开户
       </button>
-      <h2>中国公募基金交易账户</h2>
-      <ion-list>
-        <ion-checkbox ng-model="filter.blue">ifast 新加披弈丰</ion-checkbox>
-      </ion-list>
-      <button class="button button-full button-positive" ng-click="">
-        进入开户
-      </button>
+      <h3>中国公募基金与期货交易账户</h3>
+      <ul class="list">
+        <li class="item">
+          <a href="javascript:;"  ng-click="account.openifast()">ifast 新加披弈丰</a>
+        </li>
+        <li class="item">
+          <a href="javascript:;"  ng-click="account.opennanhua()">南华期货</a>
+        </li>
+      </ul>
     </div>
   </ion-content>
 </ion-view>
