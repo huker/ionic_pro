@@ -12356,13 +12356,13 @@ IonicModule
     require: '?ngModel',
     transclude: true,
     template:
-      '<label class="item item-radio">' +
-        '<input type="radio" name="radio-group">' +
-        '<div class="radio-content">' +
-          '<div class="item-content disable-pointer-events" ng-transclude></div>' +
-          '<i class="radio-icon disable-pointer-events icon ion-checkmark"></i>' +
-        '</div>' +
-      '</label>',
+    '<label class="item item-radio">' +
+    '<input type="radio" name="radio-group">' +
+    '<div class="radio-content">' +
+    '<div class="item-content disable-pointer-events" ng-transclude></div>' +
+    '<i class="radio-icon disable-pointer-events icon ion-checkmark"></i>' +
+    '</div>' +
+    '</label>',
 
     compile: function(element, attr) {
       if (attr.icon) {
@@ -12372,6 +12372,7 @@ IonicModule
 
       var input = element.find('input');
       forEach({
+
           'name': attr.name,
           'value': attr.value,
           'disabled': attr.disabled,

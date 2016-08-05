@@ -1,35 +1,10 @@
-<ion-view view-title="个人中心">
+<ion-view view-title="个人信息">
   <ion-content class="padding">
-    <div class="list card">
-      <div class="item item-avatar">
-        <img src="../../img/ionic.png" ng-click="center.selectImg()">
-        <h2>{{center.userdata.username}}</h2>
-        <p>您已经使用QStrategy<b>{{center.userdata.date}}</b>天啦!</p>
-      </div>
-      <div class="item item-divider">
-        投资风格
-        <button class="button centerbtn">修改</button>
-      </div>
-      <a class="item">预期回报率为:{{center.userdata.returnrate}}</a>
-      <a class="item">能接受的最大亏损为:{{center.userdata.maxloss}}</a>
-      <a class="item">投资规模:{{center.userdata.scale}}</a>
-      <a class="item">投资账户为:{{center.userdata.account}}</a>
-      <a class="item">是否委托自动智能调仓:{{center.userdata.auto}}</a>
-      <a class="item">盈利部分投资经理提成比例为:{{center.userdata.percent}}</a>
-      <a class="item">投资经理提成结算周期为:{{center.userdata.round}}个月</a>
-      <div class="item item-divider">
-        风险等级评测答案
-        <button class="button centerbtn">修改</button>
-      </div>
-      <a class="item">测评结果:{{center.userdata.risk}}</a>
-      <div class="item item-divider">
-        联系方式
-        <button class="button centerbtn">修改</button>
-      </div>
-      <a class="item">手机:{{center.userdata.tel}}</a>
-      <a class="item">邮箱:{{center.userdata.email}}</a>
+    <div class="item item-divider">
+      联系方式
+      <button class="button centerbtn">修改</button>
     </div>
-    <button class="button button-full button-stable" href="#">查看交易账号信息</button>
-
+    <a class="item">手机:{{center.userdata.tel}}</a>
+    <a class="item">邮箱:{{center.userdata.email}}</a>
   </ion-content>
 </ion-view>

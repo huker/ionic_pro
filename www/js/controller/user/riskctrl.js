@@ -11,6 +11,7 @@ function riskCtrl($scope,$state,ajService,$ionicPopup){
   var vm = this;
   vm.nowstep = 0;
   vm.showRisk = 1;   //进度条
+  vm.enterRisk = enterRisk;
   vm.nextstep = nextstep;
   vm.prevstep = prevstep;
   vm.getValue = getValue;
@@ -27,48 +28,63 @@ function riskCtrl($scope,$state,ajService,$ionicPopup){
   };
   vm.riskquestion = '';
   vm.book = {
-    "select1":[
-      { "text":"6个月以下","value":"a1"},
-      { "text":"6个月到1年","value":"b1"},
-      { "text":"1年到5年","value":"c1"},
-      { "text":"5年以上","value":"d1"}
-    ],
-    "select2":[
+    "select1":{
+      "title":"Q1",
+      "content":[
+        { "text":"6个月以下","value":"a1"},
+        { "text":"6个月到1年","value":"b1"},
+        { "text":"1年到5年","value":"c1"},
+        { "text":"5年以上","value":"d1"}
+      ]
+    },
+    "select2":{
+      "title":"Q2",
+      "content":[
       { "text":"资本增长，赚取稍微比银行存款微高的回报","value":"a2"},
       { "text":"B","value":"b2"},
       { "text":"C","value":"c2"},
       { "text":"D","value":"d2"}
-    ],
-    "select3":[
+    ]},
+    "select3":{
+      "title":"Q3",
+      "content":[
       { "text":"3投资经验一般","value":"a3"},
       { "text":"3投资经验较丰富","value":"b3"},
       { "text":"投资经验很有限","value":"c3"},
       { "text":"投资经验非常丰富","value":"d3"}
-    ],
-    "select4":[
+    ]},
+    "select4":{
+      "title":"Q4",
+      "content":[
       { "text":"4投资经验一般","value":"a4"},
       { "text":"4投资经验较丰富","value":"b4"},
       { "text":"投资经验很有限","value":"c4"},
       { "text":"投资经验非常丰富","value":"d4"}
-    ],
-    "select5":[
+    ]},
+    "select5":{
+      "title":"Q5",
+      "content":[
       { "text":"5投资经验一般","value":"a5"},
       { "text":"5投资经验较丰富","value":"b5"},
       { "text":"投资经验很有限","value":"c5"},
       { "text":"投资经验非常丰富","value":"d5"}
-    ],
-    "select6":[
+    ]},
+    "select6":{
+      "title":"Q6",
+      "content":[
       { "text":"6投资经验一般","value":"a6"},
       { "text":"6投资经验较丰富","value":"b6"},
       { "text":"投资经验很有限","value":"c6"},
       { "text":"投资经验非常丰富","value":"d6"}
-    ],
-    "select7":[
+    ]},
+    "select7":{
+      "title":"Q7",
+      "content":[
       { "text":"7投资经验一般","value":"a7"},
       { "text":"7投资经验较丰富","value":"b7"},
       { "text":"投资经验很有限","value":"c7"},
       { "text":"投资经验非常丰富","value":"d7"}
-    ]
+    ]}
   };
   //$scope.$watch('vm.nowstep',function(newVal,oldVal){
   //  console.log(vm.nowstep);
@@ -80,6 +96,9 @@ function riskCtrl($scope,$state,ajService,$ionicPopup){
     //}
   //});
   nextstep();
+  function enterRisk(){
+    $state.go('risk')
+  }
   //写入value进json
   function getValue(){
     var step = "select"+vm.nowstep;
@@ -136,7 +155,7 @@ function riskCtrl($scope,$state,ajService,$ionicPopup){
       }
       if(i == 'select7'){
         if(blankitems == 0){
-          $state.go('tabs.account');
+          $state.go('account');
         }
       }
     }

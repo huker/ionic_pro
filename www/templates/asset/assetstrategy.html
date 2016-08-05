@@ -1,0 +1,27 @@
+<ion-view view-title="资产信息">
+  <ion-content class="padding">
+    <div class="monitorItem">
+      <return-chart id="monitorchart" legend="asset.legend3" data="asset.data3"></return-chart>
+      <label class="item item-input item-select col-80">
+        <div class="input-label">
+          策略收益率分析
+        </div>
+        <select>
+          <option selected>本日</option>
+          <option>本周</option>
+          <option>？？？</option>
+        </select>
+      </label>
+      <table class="assetTable" border="1px">
+        <tr>
+          <th>策略类别</th><th>策略名</th><th>收益率</th>
+        </tr>
+        <tr ng-repeat="item in asset.monitorData">
+          <td>{{item.category}}</td>
+          <td>{{item.strategy}}</td>
+          <td>{{item.returnrate}}</td>
+        </tr>
+      </table>
+    </div>
+  </ion-content>
+</ion-view>

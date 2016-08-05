@@ -5,14 +5,14 @@
     </span>
   </div>
     <div class="list">
-      <h5>{{risk.risktitle}}</h5>
-      <ion-radio ng-click="risk.getValue()" ng-repeat="item in risk.select" ng-model="risk.riskquestion" ng-value="item.value">
+      <h5>{{risk.select.title}}</h5>
+      <ion-radio ng-click="risk.getValue()" ng-repeat="item in risk.select.content" ng-model="risk.riskquestion" ng-value="item.value">
         {{item.text}}
       </ion-radio>
-      <button class="button button-full button-positive" ng-click="risk.nextstep()">
+      <button class="button button-full btn_line_yellow" ng-click="risk.nextstep()">
         继续
       </button>
-      <button class="button button-full button-positive" ng-click="risk.prevstep()" ng-hide="risk.hideprev">
+      <button class="button button-full btn_color" ng-click="risk.prevstep()" ng-hide="risk.hideprev">
         上一题
       </button>
     </div>

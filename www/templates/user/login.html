@@ -1,16 +1,23 @@
-<ion-view view-title="登陆">
+<ion-view view-title="登陆" class="login_container" hide-nav-bar="true">
   <ion-content class="padding">
+    <div class="col-60 col-offset-20 login_logo">
+      <img src="../img/logo.png" alt="logo">
+    </div>
     <div class="list">
-      <label class="item item-input">
-        <span class="input-label">邮箱</span>
-        <input type="text" ng-model="login.loginmsg.email">
+      <label class="item item-input" style="background-color: rgba(255,255,255,0.2); border: none">
+        <span class="input-label color_white">邮箱 |</span>
+        <input  type="text" ng-model="login.loginmsg.email">
       </label>
-      <label class="item item-input">
-        <span class="input-label">密码</span>
-        <input type="password" ng-model="login.loginmsg.pwd">
+      <label class="item item-input" style="background-color: rgba(255,255,255,0.2); border: none; margin-top: 0.5rem">
+        <span class="input-label color_white">密码 |</span>
+        <input  type="password" ng-model="login.loginmsg.pwd">
       </label>
-      <button class="button button-full button-positive" ng-click="login.login()">
+      <p>忘记密码?</p>
+      <button class="button button-full btn_color btn_style" ng-click="login.login()">
         登陆
+      </button>
+      <button class="button button-full btn_line_yellow btn_style" ng-click="login.toreg()">
+        注册
       </button>
     </div>
   </ion-content>

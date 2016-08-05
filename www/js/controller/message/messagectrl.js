@@ -5,10 +5,45 @@
 angular.module('app.controller')
   .controller('messageCtrl',messageCtrl);
 
-messageCtrl.$inject = ['$state','ajService'];
+messageCtrl.$inject = ['$state','msgService'];
 
-function messageCtrl($state,ajService){
+function messageCtrl($state,msgService){
   var vm = this;
+  vm.select_id = ''; //点击的消息的id
+  vm.detailmsg = {}; //获取具体组合信息的参数（消息id和组合id）
+
+  vm.getMsgList = getMsgList;
+  vm.getInvestList = getInvestList;
+  vm.getStrategyMsg = getStrategyMsg;
+  vm.getBacktest = getBacktest;
+
+  //get消息列表 msgList
+  function getMsgList(){
+    msgService.getmsglist().success(function(data){
+      console.log(data);
+    })
+  }
+  //得到投资组合列表 list
+  function getInvestList(){
+    msgService.getinvestlist(vm.select_id).success(function(data){
+      console.log(data);
+    })
+  }
+  //得到具体投资组合信息
+  function getStrategyMsg(){
+    msgService.getstrategymsg(JSON.stringify(vm.detailmsg)).success(function(data){
+      console.log(data);
+    })
+  }
+  //获取回测数据 参数未写
+  function getBacktest(){
+    msgService.getstrategymsg().success(function(data){
+      console.log(data);
+    })
+  }
+
+
+
   vm.msgList = [
     {"date":"07-23","content":"推荐一个组合A","msg_id":"1"},
     {"date":"07-25","content":"推荐一个组合B","msg_id":"2"},

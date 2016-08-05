@@ -1,17 +1,139 @@
 /* Empty. Add your own CSS if you like */
+body{
+  color: #7f8080;
+  font-family: "SimHei","-apple-system","Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+  color: #7f8080;
+  font-family: "SimHei","-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+}
+.btn_style{
+  -webkit-border-radius: 0.4rem;
+  -moz-border-radius: 0.4rem;
+  border-radius: 0.4rem;
+}
+.btn_line{
+  border: 1px solid #ffffff;
+  background: transparent;
+  color: #ffffff;
+}
+.btn_line_yellow{
+  border: 1px solid #ffa500;
+  background: transparent;
+  color: #ffa500;
+}
+.btn_color{
+  background:#ffa500;
+  color: #ffffff;
+}
+
+.btn_opacity{
+  background-color: #ffffff ;
+  background-color:rgba(0,0,0,0.2);
+}
+.comein_container{
+  background: url("../img/1.jpg") no-repeat;
+  background-size: 100%;
+}
+.comein_logo{
+  margin-top: 40%;
+  margin-bottom: 20%;
+}
+.comein_logo img,.login_logo img{
+  width: 100%;
+}
+.login_container{
+  background: url("../img/loginbg.jpg") no-repeat;
+  background-size: 100%;
+}
+.login_container p{
+  display: block;
+  text-align: right;
+  color: #ffa500;
+  padding-top: 0.5rem;
+  text-decoration: underline;
+}
+.login_logo{
+  margin-top: 30%;
+  margin-bottom: 15%;
+}
+.login_container label input{
+  color: #ffffff;
+}
+.color_white{
+  color: #ffffff;
+}
+.input-label{
+  width: 20%;
+}
+.riskenter h2{
+  color: #000000;
+  text-align: center;
+  margin-top: 16%;
+  margin-bottom: 7%;
+}
+.riskenter_logo{
+  width: 200px;
+  height: 200px;
+  background: url("../img/riskbg.png");
+  background-size: 100%;
+  margin: 0 auto;
+  line-height: 250px;
+  text-align: center;
+}
+.riskenter_logo img{
+  width: 30%;
+  display: inline-block;
+  height: auto;
+}
+.riskenter p{
+  display: block;
+  line-height: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+}
+button.button-full{
+  width: 80%;
+  margin: 0 auto;
+}
+
+
 .slideView img{
   width: 100%;
 }
 .slideView button{
   position: absolute;
-  bottom: 6rem;
 }
+
+/*投资风格*/
+.invest_container h4{
+  font-size: 1rem;
+  background-color: #f5f4f9;
+  margin: 0;
+  padding: 1rem;
+  color: #444;
+}
+.invest_label{
+  width: 100%;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  vertical-align: middle;
+  display: block;
+  border-bottom: 1px solid #e6e6e6;
+  color: #444;
+}
+.invest_label input{
+  margin-right: 1rem;
+}
+
+
+/*风险问卷*/
 .timelinebox{
-  border: 1px solid #4b8bf4;
+  border: 1px solid #ffa500;
 }
 .timeline_part{
   display: block;
-  background: #4b8bf4;
+  background: #ffa500;
   height: 2em;
 }
 .timeline_part1{
@@ -35,7 +157,13 @@
 .timeline_part7{
   width: 100%;
 }
-
+/*资产*/
+.assetItem{
+  background-color: #ffffff;
+}
+.asset_tabs{
+  padding: 1rem 0;
+}
 .assetBox{
   width: 100%;
   margin: 0 auto;
@@ -58,15 +186,19 @@
 }
 .assetTable{
   width: 100%;
-  border: 1px solid #cccccc;
-  margin-top: 10px;
+  text-align: center;
+}
+.assetTable tr{
+  border-bottom: 1px solid #e6e6e6;
 }
 .assetTable td,th{
-  padding: 10px 20px;
-  border-right: 1px solid #cccccc;
+  padding: 0.6rem 0;
+}
+.assetTable td{
+  color: #444;
 }
 .assetTable tr:nth-of-type(odd){
-  background: #f9f9f9;
+  /*background: #f9f9f9;*/
 }
 .msgbottom{
   display: block;
@@ -75,6 +207,7 @@
 .msgbottom a{
   display: inline-block;
 }
+/*消息*/
 .msglist{
   width: 100%;
   padding: 1rem 0.5rem;
@@ -92,6 +225,7 @@
   padding: 1.2rem 1rem;
   margin-top: 0.3rem;
 }
+/*个人中心*/
 .centerbtn{
   border: 1px solid #dddddd;
   line-height: inherit;
@@ -99,3 +233,38 @@
   min-width: 40px;
   min-height: 30px;
 }
+.center_tabs ul li{
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+}
+/*主页*/
+.home_container,.asset_container{
+  background-color: #f5f4f9;
+}
+.home_tabs{
+  margin-top: 0.8rem;
+  background-color: #ffffff;
+  width: 100%;
+}
+.home_tabs a{
+  text-decoration: none;
+  color: #333333;
+}
+.home_tabs_line{
+  padding: 0.5rem;
+  text-align: center;
+}
+.home_tabs_line h3{
+  padding: 0; margin: 0; color: #ffa500; letter-spacing: 0.2rem; font-family: "Roboto","sans-serif";
+}
+.home_tabs_line h5{
+  padding: 0; margin: 0; font-size: 1rem;
+}
+.home_tabs ul li{
+  text-align: center;
+}
+.home_tabs ul li img{
+  width: 50%;
+}
+

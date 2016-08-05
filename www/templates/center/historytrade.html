@@ -1,0 +1,15 @@
+<ion-view view-title="历史交易">
+  <ion-content class="padding">
+    <table class="assetTable" border="1px">
+      <tr>
+        <th>策略名字</th><th>购买日期</th><th>投资金额</th><th>交易账户</th>
+      </tr>
+      <tr ng-repeat="item in center.nowTradeData">
+        <td>{{item.name}}</td>
+        <td>{{item.date}}</td>
+        <td>{{item.money}}</td>
+        <td>{{item.account}}</td>
+      </tr>
+    </table>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,36 @@
+<ion-view view-title="资产信息" class="asset_container">
+  <ion-content>
+    <!--<div class="assetBox">-->
+      <!--<ul>-->
+        <!--<li ng-click="asset.getAsset()">资产配置分析</li>-->
+        <!--<li ng-click="asset.getReturn()">收益率分析</li>-->
+        <!--<li ng-click="asset.getMonitor()">策略监控</li>-->
+      <!--</ul>-->
+    <!--</div>-->
+    <div class="list assetItem" style="margin-bottom: 0">
+      <asset-chart id="assetchart" legend="asset.testdata.name" item="asset.testdata.datetime" data="asset.testdata.curve"></asset-chart>
+    </div>
+    <label class="item item-input item-select asset_container" style="border-bottom: none">
+    <div class="input-label">
+      收益率
+    </div>
+    <select style="background-color: #f5f4f9">
+      <option selected>本日</option>
+      <option>本周</option>
+      <option>本年</option>
+      <option>累计</option>
+    </select>
+  </label>
+    <div class="row assetItem" style="border-bottom: 1px solid #e6e6e6">
+      <div class="col-50 home_tabs_line" style="border-right: 1px solid #e6e6e6;padding: 0.8rem 0">
+        <h5>我的组合</h5>
+        <h3>2.00%</h3>
+      </div>
+      <div class="col-50 home_tabs_line" style="padding: 0.8rem 0">
+        <h5>基准</h5>
+        <h3>1.00%</h3>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

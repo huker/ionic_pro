@@ -1,0 +1,59 @@
+<ion-view view-title="主页" class="home_container">
+  <ion-content>
+      <div style="width: 100%; height:180px; position: relative; overflow: hidden ">
+        <ion-slide-box>
+          <ion-slide>
+            <div class="box blue slideView">
+              <img src="../img/1.jpeg" alt="1">
+            </div>
+          </ion-slide>
+          <ion-slide>
+            <div class="box yellow slideView">
+              <img src="../img/2.jpeg" alt="2">
+            </div>
+          </ion-slide>
+          <ion-slide on-slide-changed="slideHasChanged(index)">
+            <div class="box pink slideView">
+              <img src="../img/3.jpeg" alt="3">
+            </div>
+          </ion-slide>
+        </ion-slide-box>
+      </div>
+      <div class="home_tabs">
+        <ul class="clearfix row">
+          <a href="#/tab/home/assetreturn" class="col-33">
+            <li><img src="../../img/home2.jpg" alt="1"><p>收益率分析</p></li>
+          </a>
+          <a href="#/tab/home/asset" class="col-33">
+            <li><img src="../../img/home3.png" alt="2"><p>资产配置分析</p></li>
+          </a>
+          <a href="#/tab/home/assetstrategy" class="col-33">
+            <li><img src="../../img/home1.png" alt="3"><p>策略监控</p></li>
+          </a>
+        </ul>
+      </div>
+    <div class="home_tabs">
+      <div class="col-75 home_tabs_line" style="border-bottom: 1px solid #e6e6e6; margin: 0 auto">
+        <h5>资产总市值</h5>
+        <h3>888,888.88</h3>
+      </div>
+      <div class="row clearfix">
+        <div class="col-50 home_tabs_line" style="border-right: 1px solid #e6e6e6">
+          <h5>今日资产净值</h5>
+          <h3>1.5</h3>
+        </div>
+        <div class="col-50 home_tabs_line">
+          <h5>投资天数</h5>
+          <h3>300</h3>
+        </div>
+      </div>
+    </div>
+    <div class="home_tabs">
+      <home-chart id="homechart" legend="home.legend" data="home.data"></home-chart>
+      <ul>
+        <li>
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+</ion-view>

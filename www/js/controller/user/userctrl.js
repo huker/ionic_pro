@@ -5,17 +5,22 @@ angular.module('app.controller')
   .controller('regCtrl', regCtrl);
 
 
-loginCtrl.$inject = ['ajService', '$state', '$ionicPopup'];
+loginCtrl.$inject = ['ajService', '$state', '$ionicPopup','authService','$location'];
 regCtrl.$inject = ['ajService', '$state', '$ionicPopup'];
 
 
-function loginCtrl(ajService, $state, $ionicPopup) {
-  this.loginmsg = {};
-  this.login = login;
+function loginCtrl(ajService, $state, $ionicPopup,authService,$location) {
+  var vm = this;
+  vm.loginmsg = {};
+  vm.login = login;
+  vm.toreg = gotoreg;
+  //vm.token = $location.search().token || localStorage.getItem('authorize.token');
   function login() {
-    var json = JSON.stringify(this.loginmsg);
+    var json = JSON.stringify(vm.loginmsg);
     ajService.toLogin(json).success(function (data) {
       if (data.success) {
+        authService.isLogged = true;
+        localStorage.setItem('authorize.token', data.token);
         $state.go('tabs.home');
       } else {
         $ionicPopup.alert({
@@ -25,12 +30,16 @@ function loginCtrl(ajService, $state, $ionicPopup) {
       }
     })
   }
+  function gotoreg(){
+    $state.go('register')
+  }
 }
 
 function regCtrl(ajService, $state, $ionicPopup) {
   var vm = this;
   vm.regmsg = {};
-  vm.reg = reg;
+  vm.toreg = toreg;
+  vm.gotologin = gotologin;
   vm.test = test;
   vm.gotoRisk = gotoRisk;
   vm.select1 = [
@@ -57,14 +66,15 @@ function regCtrl(ajService, $state, $ionicPopup) {
   };
 
   function test(){
-    $state.go('tabs.investstyle');
+    $state.go('investstyle');
   }
-
   function gotoRisk(){
-    $state.go('tabs.risk');
+    $state.go('risk');
   }
-
-  function reg() {
+  function gotologin(){
+    $state.go('login')
+  }
+  function toreg() {
     var json = JSON.stringify(vm.regmsg);
     ajService.toReg(json).success(function (data) {
       if (data.success) {

@@ -1,0 +1,15 @@
+<ion-view view-title="投资风格">
+  <ion-content class="padding">
+    <div class="item item-divider">
+      投资风格
+      <button class="button centerbtn">修改</button>
+    </div>
+    <a class="item">预期回报率为:{{center.userdata.returnrate}}</a>
+    <a class="item">能接受的最大亏损为:{{center.userdata.maxloss}}</a>
+    <a class="item">投资规模:{{center.userdata.scale}}</a>
+    <a class="item">投资账户为:{{center.userdata.account}}</a>
+    <a class="item">是否委托自动智能调仓:{{center.userdata.auto}}</a>
+    <a class="item">盈利部分投资经理提成比例为:{{center.userdata.percent}}</a>
+    <a class="item">投资经理提成结算周期为:{{center.userdata.round}}个月</a>
+  </ion-content>
+</ion-view>

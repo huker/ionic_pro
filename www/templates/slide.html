@@ -1,20 +1,34 @@
-<ion-slide-box>
-  <ion-slide>
-    <div class="box blue slideView">
-      <img src="../img/1.jpeg" alt="1">
+<ion-view class="comein_container"  hide-nav-bar="true">
+  <ion-content class="padding">
+    <div class="col-60 col-offset-20 comein_logo">
+      <img src="../img/logo.png" alt="logo">
     </div>
-  </ion-slide>
-  <ion-slide>
-    <div class="box yellow slideView">
-      <img src="../img/2.jpeg" alt="2">
-    </div>
-  </ion-slide>
-  <ion-slide on-slide-changed="slideHasChanged(index)">
-    <div class="box pink slideView">
-      <img src="../img/3.jpeg" alt="3">
-      <button class="button button-full button-light" href="#/tab/home" ng-click="slide.toHome()">
-        开始使用
+    <button class="button button-full btn_line"  ng-click="slide.tologin()" >
+    登陆
+    </button>
+    <button class="button button-full btn_line"  ng-click="slide.toreg()">
+    注册
+    </button>
+    <button class="button button-full btn_line"  ng-click="slide.tohome()">
+    进入主页
       </button>
-    </div>
-  </ion-slide>
-</ion-slide-box>
+  </ion-content>
+</ion-view>
+
+<!--<ion-slide-box>-->
+  <!--<ion-slide>-->
+    <!--<div class="box blue slideView">-->
+      <!--<img src="../img/1.jpeg" alt="1">-->
+    <!--</div>-->
+  <!--</ion-slide>-->
+  <!--<ion-slide>-->
+    <!--<div class="box yellow slideView">-->
+      <!--<img src="../img/2.jpeg" alt="2">-->
+    <!--</div>-->
+  <!--</ion-slide>-->
+  <!--<ion-slide on-slide-changed="slideHasChanged(index)">-->
+    <!--<div class="box pink slideView">-->
+      <!--<img src="../img/3.jpeg" alt="3">-->
+    <!--</div>-->
+  <!--</ion-slide>-->
+<!--</ion-slide-box>-->
