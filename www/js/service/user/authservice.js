@@ -1,33 +1,26 @@
 angular.module('app.service')
-.factory('authService',authService);
+  .factory('UserInterceptor',UserInterceptor);
 
-authService.$inject = [];
+UserInterceptor.$inject = ['$q','$location','$localStorage'];
 
-function authService(){
-  var auth = {
-    isLogged: false
-  };
-  return auth;
-}
-
-angular.module('app.service')
-  .factory('AuthInjector',AuthInjector);
-
-AuthInjector.$inject = ['$q','$location'];
-
-function AuthInjector($q,$location){
+function UserInterceptor($q,$location,$localStorage){
   return {
     request: function (config) {
       config.headers = config.headers || {};
-      var token = $location.search().token || localStorage.getItem('authorize.token');
-      if (token) {
-        config.headers.Authorization = 'Bearer ' + token;
+      if ($localStorage.token) {
+        config.headers.Authorization = 'Bearer ' + $localStorage.token;
       }
       return config;
     },
 
-    response: function (response) {
-      return response || $q.when(response);
+    //response: function (response) {
+    //  return response || $q.when(response);
+    //},
+    responseError: function(response){
+      if(response.status === 401 || response.status === 403){
+        $location.path('/login');
+      }
+      return $q.reject(response);
     }
   };
 }

@@ -1,5 +1,5 @@
 angular.module('app.routes')
-  .config(function($stateProvider, $urlRouterProvider){
+  .config(function($stateProvider, $urlRouterProvider,$httpProvider){
     $stateProvider
       .state('tabs', {
         url: "/tab",
@@ -262,10 +262,8 @@ angular.module('app.routes')
             controller: "centerCtrl as center"
           }
         }
-      })
+      });
     $urlRouterProvider.otherwise("/slide");
-    function checkLoginState(){
 
-    }
-
+    //$httpProvider.interceptors.push('UserInterceptor');
   })

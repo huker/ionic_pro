@@ -5,22 +5,20 @@ angular.module('app.controller')
   .controller('regCtrl', regCtrl);
 
 
-loginCtrl.$inject = ['ajService', '$state', '$ionicPopup','authService','$location'];
-regCtrl.$inject = ['ajService', '$state', '$ionicPopup'];
+loginCtrl.$inject = ['ajService', '$state', '$ionicPopup','$localStorage'];
+regCtrl.$inject = ['ajService', '$state', '$ionicPopup','$localStorage'];
 
 
-function loginCtrl(ajService, $state, $ionicPopup,authService,$location) {
+function loginCtrl(ajService, $state, $ionicPopup,$localStorage) {
   var vm = this;
   vm.loginmsg = {};
   vm.login = login;
   vm.toreg = gotoreg;
-  //vm.token = $location.search().token || localStorage.getItem('authorize.token');
   function login() {
     var json = JSON.stringify(vm.loginmsg);
     ajService.toLogin(json).success(function (data) {
       if (data.success) {
-        authService.isLogged = true;
-        localStorage.setItem('authorize.token', data.token);
+        $localStorage.token = data.data.token;
         $state.go('tabs.home');
       } else {
         $ionicPopup.alert({
@@ -33,9 +31,10 @@ function loginCtrl(ajService, $state, $ionicPopup,authService,$location) {
   function gotoreg(){
     $state.go('register')
   }
+  //vm.token = $localStorage.token
 }
 
-function regCtrl(ajService, $state, $ionicPopup) {
+function regCtrl(ajService, $state, $ionicPopup,$localStorage) {
   var vm = this;
   vm.regmsg = {};
   vm.toreg = toreg;
@@ -78,6 +77,7 @@ function regCtrl(ajService, $state, $ionicPopup) {
     var json = JSON.stringify(vm.regmsg);
     ajService.toReg(json).success(function (data) {
       if (data.success) {
+        $localStorage.token = data.data.token;
         $state.go('tabs.home');
       } else if (data.errorCode == 8004) {
         $ionicPopup.alert({
@@ -103,6 +103,7 @@ function regCtrl(ajService, $state, $ionicPopup) {
     })
 
   }
+  //vm.token = $localStorage.token;
 }
 
 
