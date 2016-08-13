@@ -99,7 +99,7 @@ button.button-full{
 
 
 .slideView img{
-  width: 100%;
+  /*width: 100%;*/
 }
 .slideView button{
   position: absolute;

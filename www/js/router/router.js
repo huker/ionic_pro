@@ -264,5 +264,8 @@ angular.module('app.routes')
         }
       })
     $urlRouterProvider.otherwise("/slide");
+    function checkLoginState(){
+
+    }
 
   })

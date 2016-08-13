@@ -81,6 +81,9 @@ function returnChartDireact(ajService) {
     template: '<div style="height:240px;"></div>',
     link: function ($scope, element, attrs, controller) {
       var option = {
+        color:['#DBE9C6','#948EB2', '#EDB88C', '#A3BD9A',
+          '#ECE6C6','#749f83',  '#ca8622', '#bda29a','#6e7074',
+          '#546570', '#c4ccd3'],
         tooltip: {
           trigger: 'item',
           formatter: "{a} <br/>{b} : {c} ({d}%)"
@@ -88,7 +91,18 @@ function returnChartDireact(ajService) {
         legend: {
           x: 'center',
           top: '10%',
-          data: $scope.legend
+          data:
+            function () {
+              var legend = [];
+              for (var i=0;i<$scope.legend.length;i++){
+                var item = {
+                  name:$scope.legend[i],
+                  icon:'circle'
+                }
+                legend.push(item);
+              }
+              return legend;
+            }()
         },
         series: [
           {
