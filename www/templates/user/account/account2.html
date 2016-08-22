@@ -1,0 +1,73 @@
+<ion-view view-title="填写基本信息">
+  <ion-content>
+    <div class="list">
+      <label class="item item-input">
+        <input type="text" placeholder="您的姓名">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="姓（拼音） 如：CHEN">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="名（拼音） 如：YUE">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="身份证号">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="身份证地址">
+      </label>
+      <label class="item item-input item-select">
+        <div class="input-label">
+          职业状况
+        </div>
+        <select>
+          <option>受雇</option>
+          <option selected>自雇</option>
+        </select>
+      </label>
+      <label class="item item-input item-select">
+        <div class="input-label">
+          所属行业
+        </div>
+        <select>
+          <option>金融/银行/保险</option>
+          <option selected>政府/事业机构</option>
+          <option>广告公关/媒体/艺术文化</option>
+          <option>销售/贸易</option>
+          <option>计算机/互联网/通信/电子技术</option>
+          <option>生产制造/物流运输</option>
+          <option>医药/化工</option>
+          <option>建筑/房地产</option>
+          <option>教育/法律</option>
+          <option>餐饮/娱乐/美容</option>
+          <option>其他</option>
+        </select>
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="单位名称">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="单位地址">
+      </label>
+      <div class="info_border">
+        <div style="padding: 1rem;">
+        <p>账户所有人本人及其直系亲属是否为等级的证券经纪人、证券交易所、监管组织、证券或商品经纪公司的员工、关联人员、利害关系人？</p>
+          <button>是</button>
+          <button>否</button>
+        </div>
+
+      </div>
+      <div class="info_border">
+        <div style="padding: 1rem;">
+          <p>账户持有人是否是一家公共上市公司的董事，持10%股权的股东或决策人？</p>
+          <button>是</button>
+          <button>否</button>
+        </div>
+      </div>
+
+    </div>
+    <button class="button button-full btn_color" ng-click="">
+      下一步
+    </button>
+  </ion-content>
+</ion-view>

@@ -31,7 +31,7 @@ function loginCtrl(ajService, $state, $ionicPopup,$localStorage) {
   function gotoreg(){
     $state.go('register')
   }
-  //vm.token = $localStorage.token
+  vm.token = $localStorage.token
 }
 
 function regCtrl(ajService, $state, $ionicPopup,$localStorage) {
@@ -68,7 +68,7 @@ function regCtrl(ajService, $state, $ionicPopup,$localStorage) {
     $state.go('investstyle');
   }
   function gotoRisk(){
-    $state.go('risk');
+    $state.go('riskenter');
   }
   function gotologin(){
     $state.go('login')
@@ -103,7 +103,7 @@ function regCtrl(ajService, $state, $ionicPopup,$localStorage) {
     })
 
   }
-  //vm.token = $localStorage.token;
+  vm.token = $localStorage.token;
 }
 
 

@@ -1,18 +1,22 @@
-<ion-view view-title="资产信息">
-  <ion-content class="padding">
+<ion-view view-title="资产信息" class="asset_container">
+  <ion-content>
     <div class="monitorItem">
+      <div class="assetItem">
       <return-chart id="monitorchart" legend="asset.legend3" data="asset.data3"></return-chart>
-      <label class="item item-input item-select col-80">
+      </div>
+      <div class="assetItem" style="margin-top: 0.8rem">
+        <label class="item item-input item-select" style="border-top: none">
         <div class="input-label">
           策略收益率分析
         </div>
         <select>
           <option selected>本日</option>
           <option>本周</option>
-          <option>？？？</option>
+          <option>本年</option>
+          <option>累计</option>
         </select>
       </label>
-      <table class="assetTable" border="1px">
+      <table class="assetTable">
         <tr>
           <th>策略类别</th><th>策略名</th><th>收益率</th>
         </tr>
@@ -22,6 +26,7 @@
           <td>{{item.returnrate}}</td>
         </tr>
       </table>
+     </div>
     </div>
   </ion-content>
 </ion-view>

@@ -11,6 +11,14 @@ function accountCtrl($state,ajService){
   var vm = this;
   vm.openifast = openifast;
   vm.opennanhua = opennanhua;
+  vm.gotoId = gotoId;
+  vm.gotoInfo = gotoInfo;
+  function gotoInfo(){
+    $state.go('account_info');
+  }
+  function gotoId(){
+    $state.go('account_id');
+  }
   function openifast(){
     window.open('http://www.baidu.com', '_system');
   }

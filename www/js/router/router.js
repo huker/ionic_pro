@@ -52,6 +52,16 @@ angular.module('app.routes')
         templateUrl:"templates/user/openaccount.html",
         controller: "accountCtrl as account"
       })
+      .state('account_id',{
+        url:"/register/investstyle/riskenter/risk/account/id",
+        templateUrl:"templates/user/account/account1.html",
+        controller: "accountCtrl as account"
+      })
+      .state('account_info',{
+        url:"/register/investstyle/riskenter/risk/account/info",
+        templateUrl:"templates/user/account/account2.html",
+        controller: "accountCtrl as account"
+      })
       //.state('tabs.login',{
       //  url:"/home/login",
       //  views:{
