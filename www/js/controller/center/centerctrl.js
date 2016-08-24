@@ -7,7 +7,7 @@ angular.module('app.controller')
 
 centerCtrl.$inject = ['$state','ajService','$ionicActionSheet'];
 
-function centerCtrl($state,ajService,$ionicActionSheet){
+function centerCtrl($state,centerService,$ionicActionSheet){
   var vm = this;
   vm.selectImg = selectImg;
   vm.img = '../../img/ionic.png';
@@ -32,7 +32,7 @@ function centerCtrl($state,ajService,$ionicActionSheet){
     });
   }
   function cameraSuccess(img) {
-    $scope.img = img;//这里返回的img是选择的图片的地址，可以直接赋给img标签的src，就能显示了
+    vm.img = img;//这里返回的img是选择的图片的地址，可以直接赋给img标签的src，就能显示了
     window.resolveLocalFileSystemURL(img, function success(fileEntry) {
       upload(fileEntry.toInternalURL());//将获取的文件地址转换成file transfer插件需要的绝对地址
     }, function() {
@@ -40,7 +40,7 @@ function centerCtrl($state,ajService,$ionicActionSheet){
     });
   }
 
-  function cameraError(img) {
+  function cameraError() {
     alert("上传失败");
   }
 
@@ -52,20 +52,19 @@ function centerCtrl($state,ajService,$ionicActionSheet){
       }else {
         alert(response.datas.error);
       }
-    }
+    };
     var fail = function(error) {//失败回调方法
       alert("上传失败");
-    }
+    };
 
     var options = new FileUploadOptions();
     options.fileKey = "pic";//这是你的上传接口的文件标识，服务器通过这个标识获取文件
     options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
-    options.mimeType = "image/gif";//图片
+    options.mimeType = "image/jpeg";//图片
 
     var ft = new FileTransfer();
-    ft.upload(fileURL, encodeURI('uploadurl'), win, fail, options);//开始上传，uoloadurl是你的上传接口地址
+    ft.upload(fileURL, encodeURI('uploadurl'), win, fail, options);//开始上传，uoloadurl是上传接口地址
   }
-
 
   vm.userdata = {
     "username":"huker",
