@@ -9,13 +9,44 @@ messageCtrl.$inject = ['$state','msgService'];
 
 function messageCtrl($state,msgService){
   var vm = this;
-  vm.select_id = ''; //点击的消息的id
   vm.detailmsg = {}; //获取具体组合信息的参数（消息id和组合id）
+  vm.detailList = {};
 
+  var height = angular.element(document.querySelector('#trade')).css('height');
+  console.log(angular.element(document.querySelector('#trade')))
+  console.log(height)
+  angular.element(document.querySelector('#trade_con')).css('height',height);
+ 	/**
+   * api define
+   */
   vm.getMsgList = getMsgList;
   vm.getInvestList = getInvestList;
   vm.getStrategyMsg = getStrategyMsg;
   vm.getBacktest = getBacktest;
+
+	/**
+   * 功能
+   * readMsg 消息阅读跳转
+   * strategyDetail 消息中的组合策略跳转
+   */
+  vm.readMsg = readMsg;
+  vm.strategyDetail = strategyDetail;
+  vm.gotoTrade = gotoTrade;
+  function readMsg(id){
+    $state.go('tabs.msgdetail');
+    var msg_id = {"msg_id":id};
+    getInvestList(msg_id);
+  }
+  function strategyDetail(id){
+    $state.go('tabs.msgpage');
+    var strategy_id = {"strategy_id":id};
+    getStrategyMsg(strategy_id);
+  }
+  function gotoTrade(select){
+    $state.go('tabs.trade');
+    console.log(select)
+  }
+
 
   //get消息列表 msgList
   function getMsgList(){
@@ -24,14 +55,14 @@ function messageCtrl($state,msgService){
     })
   }
   //得到投资组合列表 list
-  function getInvestList(){
-    msgService.getinvestlist(vm.select_id).success(function(data){
+  function getInvestList(select_id){
+    msgService.getinvestlist(select_id).success(function(data){
       console.log(data);
     })
   }
   //得到具体投资组合信息
-  function getStrategyMsg(){
-    msgService.getstrategymsg(JSON.stringify(vm.detailmsg)).success(function(data){
+  function getStrategyMsg(strategy_id){
+    msgService.getstrategymsg(strategy_id).success(function(data){
       console.log(data);
     })
   }
@@ -45,15 +76,18 @@ function messageCtrl($state,msgService){
 
 
   vm.msgList = [
-    {"date":"07-23","content":"推荐一个组合A","msg_id":"1"},
-    {"date":"07-25","content":"推荐一个组合B","msg_id":"2"},
-    {"date":"07-26","content":"推荐一个组合C","msg_id":"3"}
+    {"date":"07-23 11:11","content":"推荐一个组合A","investmanager":"QStrategy","msg_id":"1","url":"./","read":true},
+    {"date":"07-25 11:11","content":"推荐一个组合B","investmanager":"QStrategy","msg_id":"2","url":"./","read":true},
+    {"date":"07-26 11:11","content":"推荐一个组合C","investmanager":"QStrategy","msg_id":"3","url":"./","read":false}
   ];
-  vm.list = [
-    {"name":"策略一号","money":"50000","msg_id":"1"},
-    {"name":"单股票一号","money":"30000","msg_id":"2"},
-    {"name":"混合一号","money":"70000","msg_id":"3"}
-  ];
+  vm.detailList = {
+    "list":[
+      {"checked":true,"category":"混合型","name":"策略一号","money":"50000","strategy_id":"1","forest_r":20.88,"forest_risk":10.88},
+      {"checked":false,"category":"混合型","name":"单股票一号","money":"30000","strategy_id_id":"2","forest_r":20.88,"forest_risk":10.88},
+      {"checked":false,"category":"混合型","name":"混合一号","money":"70000","strategy_id_id":"3","forest_r":20.88,"forest_risk":10.88}
+    ],
+    "investmanager":"QStrategy"
+  };
   vm.getstrategy = {
     "name":"策略一号",
     "money":"50000",

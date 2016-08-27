@@ -7,6 +7,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   color: #7f8080;
   font-family: "SimHei","-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
 }
+
 .btn_style{
   -webkit-border-radius: 0.4rem;
   -moz-border-radius: 0.4rem;
@@ -26,7 +27,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   background:#ffa500;
   color: #ffffff;
 }
-
+.btn_color_b{
+  background:#73D9EF;
+  color: #ffffff;
+}
 .btn_opacity{
   background-color: #ffffff ;
   background-color:rgba(0,0,0,0.2);
@@ -204,39 +208,123 @@ button.button-full{
   display: block;
   margin-top: 1.5rem;
 }
-.msgbottom a{
-  display: inline-block;
+/*消息列表首页*/
+.msgListItem{
+  border-right: none;
+  border-left:none;
+  padding: 12px;
 }
-/*消息*/
+.msgListItem a{
+  text-decoration: none;
+}
+.msgListItem h2{
+  color: #000000;
+}
+.msgListItem p{
+  color: #8f8f8f;
+}
+.msgListItem .msgRight{
+  text-align: right;
+}
+.msgListItem .msgRight .readTip{
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #ffa500;
+  -webkit-border-radius:50%;
+  -moz-border-radius:50%;
+  border-radius:50%;
+}
+/*查看具体消息页面 策略组合列表*/
+.msgDetail_top{
+  padding: 0.5rem;
+}
+.msgDetail_top p{
+  padding: 0;
+  margin:0;
+}
+.msgDetail_list h4,.msgDetail_list h5,.msgDetail_list h3,.msgDetail_list p{
+  padding: 0.2rem;
+  margin: 0;
+}
+.msgDetail_list h3{
+  font-size: 0.9rem;
+}
+.msgDetail_list h4{
+  font-size: 1.3rem;
+  color: #ffa500;
+  /*font-weight: bold;*/
+}
+.msgDetail_list .detail_color_b{
+  color: #000000;
+}
+.msgDetail_list p,.msgDetail_list h5{
+  font-size: 0.7rem;
+  padding: 0 0.2rem;
+}
 .msglist{
   width: 100%;
-  padding: 1rem 0.5rem;
-  border: 1px solid #e2e2e2;
-  border-top: none;
+  border-bottom: 1px solid #e6e6e6;
 }
 .msglist:first-child{
-  border-top: 1px solid #e2e2e2;
+  border-top: 1px solid #e6e6e6;
 }
 .msglist input{
   width: 2rem;
 }
+
 .detailpagemsg{
   border: 1px solid #dddddd;
   padding: 1.2rem 1rem;
   margin-top: 0.3rem;
 }
+/*交易*/
+.trade_bottom{
+  position: absolute;
+  bottom:0;
+  left: 0;
+}
 /*个人中心*/
+.centerTop{
+  text-align: center;
+  background: #ffa500;
+  padding: 1.2rem;
+  color: #ffffff;
+}
+.centerTop h2{
+  color: #ffffff;
+  margin: 0.5rem auto;
+}
+.centerTop img{
+  border: 2px solid #ffffff;
+  -webkit-border-radius:50%;
+  -moz-border-radius:50%;
+  border-radius:50%;
+}
+
 .centerbtn{
-  border: 1px solid #dddddd;
+  border: 1px solid #e6e6e6;
   line-height: inherit;
   font-size: 13px ;
   min-width: 40px;
   min-height: 30px;
 }
 .center_tabs ul li{
-  height: 60px;
-  line-height: 60px;
+  padding: 1rem;
   text-align: center;
+  border-bottom: 1px solid #e6e6e6;
+  border-right: 1px solid #e6e6e6;
+}
+.center_tabs ul li .none{
+  border-right: none;
+}
+.center_tabs ul a{
+  text-decoration: none;
+  color: #000000;
+}
+.center_tabs ul li i{
+  color: #ffa500;
+  display: block;
 }
 /*主页*/
 .home_container,.asset_container{

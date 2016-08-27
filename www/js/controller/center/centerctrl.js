@@ -10,7 +10,63 @@ centerCtrl.$inject = ['$state','ajService','$ionicActionSheet'];
 function centerCtrl($state,centerService,$ionicActionSheet){
   var vm = this;
   vm.selectImg = selectImg;
-  vm.img = '../../img/ionic.png';
+  vm.userInfo = userInfo;
+  vm.img = '../../img/ava.jpg';
+
+  //获取用户信息
+  function userInfo(){
+    centerService.getUserInfo().success(function(data){
+
+    });
+  }
+
+
+  vm.userdata = {
+    "username":"huker",
+    "date":"100",
+    "returnrate":"5%-8%",
+    "maxloss":"5%-10%",
+    "scale":"100000",
+    "account":"true",
+    "auto":"true",
+    "percent":"20%",
+    "round":"3",
+    "risk":"平衡型",
+    "tel":"18862005793",
+    "email":"xxx@sina.com"
+  };
+  vm.nowTradeData = [{
+    "name":"混合一号",
+    "date":"2016/07/01",
+    "money":"100000",
+    "account":"盛宝银行"
+  },
+    {
+      "name":"基金一号",
+      "date":"2016/07/06",
+      "money":"50000",
+      "account":"ifast"
+    }
+  ];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   function selectImg(){
     var hideSheet = $ionicActionSheet.show({
       buttons: [{
@@ -66,31 +122,5 @@ function centerCtrl($state,centerService,$ionicActionSheet){
     ft.upload(fileURL, encodeURI('uploadurl'), win, fail, options);//开始上传，uoloadurl是上传接口地址
   }
 
-  vm.userdata = {
-    "username":"huker",
-    "date":"100",
-    "returnrate":"5%-8%",
-    "maxloss":"5%-10%",
-    "scale":"100000",
-    "account":"true",
-    "auto":"true",
-    "percent":"20%",
-    "round":"3",
-    "risk":"平衡型",
-    "tel":"18862005793",
-    "email":"xxx@sina.com"
-  };
-  vm.nowTradeData = [{
-    "name":"混合一号",
-    "date":"2016/07/01",
-    "money":"100000",
-    "account":"盛宝银行"
-  },
-    {
-      "name":"基金一号",
-      "date":"2016/07/06",
-      "money":"50000",
-      "account":"ifast"
-    }
-  ];
+
 }

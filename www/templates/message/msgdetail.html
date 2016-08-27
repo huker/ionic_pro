@@ -1,23 +1,43 @@
 <ion-view view-title="交易执行">
-  <ion-content class="padding">
-    <h4>您的投资经理：XXX</h4>
-    <p>向您建议购买投资组合：</p>
+  <ion-content>
+    <div class="msgDetail_top">
+      <h4>您的投资经理：
+        <span style="color: #000000;">{{message.detailList.investmanager}}</span>
+      </h4>
+      <p>向您建议购买投资组合：</p>
+    </div>
+
     <!--<ion-list>-->
       <!--<ion-checkbox ng-repeat="item in message.list">-->
         <!--<a href="#">{{item.name}}</a>建议购买金额：{{item.money}}元-->
       <!--</ion-checkbox>-->
     <!--</ion-list>-->
     <form>
-      <div ng-repeat="item in message.list" class="msglist">
-        <input type="checkbox" name="msg">
-        <a href="#/tab/message/msgdetail/msgpage">{{item.name}}</a>
-        <span>建议购买金额：{{item.money}}元</span>
-        <br>
+      <div ng-repeat="item in message.detailList.list" class="row msglist" style="margin: 0; padding: 0.5rem">
+        <!--<input type="checkbox" name="msg" class="col-10">-->
+        <ion-checkbox style="border: none; padding: 0.5rem;" ng-model="item.checked" ng-checked="item.checked" class="col-20"></ion-checkbox>
+        <div class="col-80 msgDetail_list" ng-click="message.strategyDetail(item.strategy_id)">
+          <h3 class="detail_color_b">{{item.name}}</h3>
+          <h5>{{item.category}}</h5>
+          <ul class="row" style="padding: 0; margin:0;">
+            <li class="col-33">
+              <h4>{{item.forest_r}}%</h4>
+              <p>预期收益率</p>
+            </li>
+            <li class="col-33">
+              <h4>{{item.forest_risk}}%</h4>
+              <p>预期波动率</p>
+            </li>
+            <li class="col-33">
+              <h4 class="detail_color_b">{{item.money}}元</h4>
+              <p>建议购买金额</p>
+            </li>
+          </ul>
+        </div>
       </div>
     </form>
     <div class="msgbottom">
-      <a class="button button-positive" href="#/tab/message/contact">在线联系投资经理</a>
-      <a class="button button-positive" href="#/tab/message/trade">执行交易</a>
+      <button class="button button-full btn_color btn_style" ng-click="message.gotoTrade(message.detailList.list)">执行交易</button>
     </div>
   </ion-content>
 </ion-view>

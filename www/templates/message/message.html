@@ -1,12 +1,18 @@
 <ion-view view-title="消息">
-  <ion-content class="padding">
-    <div class="card">
-      <div class="item item-text-wrap clearfix" ng-repeat="item in message.msgList">
-        <div style="float: left">
-          <p>{{item.content}}</p>
-          <span>日期：{{item.date}}</span>
-        </div>
-        <a class="button button-positive" style="float: right" href="#/tab/message/msgdetail">查看</a>
+  <ion-content>
+    <div>
+      <div class="item msgListItem" ng-repeat="item in message.msgList" ng-click="message.readMsg()">
+        <!--<a href="#/message/msgdetail?id={{item.msg_id}}" class="row">-->
+        <a ng-click="message.readMsg(item.msg_id)" class="row">
+          <div class="col-60">
+            <h2>投资经理:{{item.investmanager}}</h2>
+            <p>{{item.content}}</p>
+          </div>
+          <div class="col-40 msgRight">
+            <p>{{item.date}}</p>
+            <span class="readTip" ng-if="item.read"></span>
+          </div>
+        </a>
       </div>
     </div>
   </ion-content>

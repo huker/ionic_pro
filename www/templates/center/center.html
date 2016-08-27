@@ -1,24 +1,41 @@
 <ion-view view-title="个人中心">
-  <ion-content class="padding">
-    <div class="list card">
-      <div class="item item-avatar">
-        <img src="{{center.img}}" ng-click="center.selectImg()">
+  <ion-content>
+    <div>
+      <!--<div class="item item-avatar">-->
+        <!--<img src="{{center.img}}" ng-click="center.selectImg()">-->
+        <!--<h2>{{center.userdata.username}}</h2>-->
+        <!--<p>您已经使用QStrategy<b>{{center.userdata.date}}</b>天啦!</p>-->
+      <!--</div>-->
+      <div class="centerTop">
+        <img class="col-25" src="{{center.img}}" ng-click="center.selectImg()">
         <h2>{{center.userdata.username}}</h2>
-        <p>您已经使用QStrategy<b>{{center.userdata.date}}</b>天啦!</p>
+        <p>您已经使用QStrategy<b style="color: #000; font-size: 1.2rem">{{center.userdata.date}}</b>天啦!</p>
       </div>
       <div class="center_tabs">
-        <ul class="clearfix row">
-          <a href="#/tab/center/centerInvestStyle" class="col-33"><li >投资风格</li></a>
-          <a href="#/tab/center/riskLevel" class="col-33"><li>风险等级</li></a>
-          <a href="#/tab/center/personal"class="col-33"><li >个人信息</li></a>
+        <ul class="clearfix row" style="padding: 0;">
+          <a href="#/tab/center/centerInvestStyle" class="col-33">
+            <li><i class="iconfont iconOwn">&#xe609;</i>投资风格</li>
+          </a>
+          <a href="#/tab/center/riskLevel" class="col-33">
+            <li><i class="iconfont iconOwn">&#xe603;</i>风险等级</li>
+          </a>
+          <a href="#/tab/center/personal" class="col-33">
+            <li><i class="iconfont iconOwn none">&#xe607;</i>个人信息</li>
+          </a>
         </ul>
-        <ul class="clearfix row">
-          <a href="#/tab/center/account" class="col-33"><li>交易账户</li></a>
-          <a href="#/tab/center/nowTrade" class="col-33"><li>现持有交易</li></a>
-          <a href="#/tab/center/historyTrade" class="col-33"><li>历史交易</li></a>
+        <ul class="clearfix row" style="padding: 0;">
+          <a href="#/tab/center/account" class="col-33">
+            <li><i class="iconfont iconOwn">&#xe602;</i>交易账户</li>
+          </a>
+          <a href="#/tab/center/nowTrade" class="col-33">
+            <li><i class="iconfont iconOwn">&#xe605;</i>现持有交易</li>
+          </a>
+          <a href="#/tab/center/historyTrade" class="col-33">
+            <li><i class="iconfont iconOwn none">&#xe60a;</i>历史交易</li>
+          </a>
         </ul>
       </div>
 
-      </div>
+    </div>
   </ion-content>
 </ion-view>
