@@ -1,32 +1,41 @@
-<ion-view view-title="交易">
-  <ion-content id="trade">
-    <div id="trade_con">
-      <div class="trade_bottom">
-        <!--<button class="button button-full btn_color btn_style">萝卜跟单</button>-->
-        <!--<button class="button button-full btn_color_b btn_style">手动跟单</button>-->
-        <button class="">萝卜跟单</button>
-        <button class="">手动跟单</button>
-      </div>
-    </div>
-    <!--<h3>已选策略：{{message.getstrategy.name}}</h3>-->
-    <!--<div class="list">-->
-      <!--<label class="item item-input item-stacked-label">-->
-        <!--<span class="input-label">建议购买金额：</span>-->
-        <!--<input type="number" placeholder="填写购买金额" value="{{message.getstrategy.money}}" required>-->
-      <!--</label>-->
-      <!--<label class="item item-input item-select">-->
-        <!--<div class="input-label">-->
-          <!--选择交易账户：-->
-        <!--</div>-->
-        <!--<select>-->
-          <!--<option selected>盈透证券</option>-->
-          <!--<option>ifast</option>-->
-          <!--<option>。。。</option>-->
-        <!--</select>-->
-      <!--</label>-->
+<ion-view view-title="交易" hide-tabs="true">
+  <ion-content>
+    <!--<div class="tabs-striped tabs-top">-->
+      <!--<div class="tabs" style="top: 0;">-->
+          <!--<select class="tab-item active">-->
+            <!--<option selected>盈透证券</option>-->
+            <!--<option>ifast</option>-->
+            <!--<option>IB</option>-->
+          <!--</select>-->
+        <!--<a class="luobo_trade tab-item">-->
+          <!--萝卜跟单-->
+        <!--</a>-->
+        <!--<a class="shoudong_trade tab-item ">-->
+          <!--手动跟单-->
+        <!--</a>-->
+      <!--</div>-->
     <!--</div>-->
-
-
+    <div class="list trade_con">
+      <h3>已选策略：{{message.getstrategy.name}}</h3>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">建议购买金额：</span>
+        <input type="number" placeholder="填写购买金额" value="{{message.getstrategy.money}}" required>
+      </label>
+    </div>
   </ion-content>
-
+  <ion-tabs class="tabs-icon-top">
+    <div class="tabs" style="border:none; padding-top: 0">
+      <select class="tab-item" style="font-size: 15px">
+        <option selected>盈透证券</option>
+        <option>ifast</option>
+        <option>IB</option>
+      </select>
+      <button class="luobo_trade tab-item" style="border:none;font-size: 15px">
+        萝卜跟单
+      </button>
+      <button class="shoudong_trade tab-item " style="border:none;font-size: 15px">
+        手动跟单
+      </button>
+    </div>
+  </ion-tabs>
 </ion-view>

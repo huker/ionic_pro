@@ -11,11 +11,6 @@ function messageCtrl($state,msgService){
   var vm = this;
   vm.detailmsg = {}; //获取具体组合信息的参数（消息id和组合id）
   vm.detailList = {};
-
-  var height = angular.element(document.querySelector('#trade')).css('height');
-  console.log(angular.element(document.querySelector('#trade')))
-  console.log(height)
-  angular.element(document.querySelector('#trade_con')).css('height',height);
  	/**
    * api define
    */
@@ -90,6 +85,7 @@ function messageCtrl($state,msgService){
   };
   vm.getstrategy = {
     "name":"策略一号",
+    "strategy_id":"576b4d3c34ab5509ad5a7c2e",
     "money":"50000",
     "returnrate":"20%",
     "volatility":"10%",

@@ -13,10 +13,10 @@
       <!--</ion-checkbox>-->
     <!--</ion-list>-->
     <form>
-      <div ng-repeat="item in message.detailList.list" class="row msglist" style="margin: 0; padding: 0.5rem">
+      <div ng-repeat="item in message.detailList.list" class="msglist" style="margin: 0; padding: 1rem">
         <!--<input type="checkbox" name="msg" class="col-10">-->
-        <ion-checkbox style="border: none; padding: 0.5rem;" ng-model="item.checked" ng-checked="item.checked" class="col-20"></ion-checkbox>
-        <div class="col-80 msgDetail_list" ng-click="message.strategyDetail(item.strategy_id)">
+        <!--<ion-checkbox style="border: none; padding: 0.5rem;" ng-model="item.checked" ng-checked="item.checked" class="col-20"></ion-checkbox>-->
+        <div class="msgDetail_list" ng-click="message.strategyDetail(item.strategy_id)">
           <h3 class="detail_color_b">{{item.name}}</h3>
           <h5>{{item.category}}</h5>
           <ul class="row" style="padding: 0; margin:0;">
@@ -36,9 +36,6 @@
         </div>
       </div>
     </form>
-    <div class="msgbottom">
-      <button class="button button-full btn_color btn_style" ng-click="message.gotoTrade(message.detailList.list)">执行交易</button>
-    </div>
   </ion-content>
 </ion-view>
 
