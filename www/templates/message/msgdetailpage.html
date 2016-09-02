@@ -1,6 +1,6 @@
 <ion-view view-title="交易执行">
-  <ion-content class="padding">
-    <h2 style="text-align: center"><a href="#/tab/message/msgdetail/msgpage/msgstrategy">{{message.getstrategy.name}}</a></h2>
+  <ion-content>
+    <h2 style="text-align: center;padding: 1.5rem 0"><a href="#/tab/message/msgdetail/msgpage/msgstrategy">{{message.getstrategy.name}}</a></h2>
     <ul class="list">
       <li class="item">投资经理：QStrategy</li>
       <li class="item">起投金额：{{message.getstrategy.money}} 元</li>
@@ -14,8 +14,9 @@
         </div>
       </li>
     </ul>
-    <div class="msgbottom">
-      <a class="button button-full btn_color btn_style" ng-click="message.gotoTrade(message.getstrategy.strategy_id)">执行交易</a>
+    <div class="msgbottom clearfix">
+      <button class="button  btn_style half btn_color" style="float: left; margin-left: 5%" ng-click="message.gotoTrade(message.getstrategy.strategy_id)">萝卜跟单</button>
+      <button class="button btn_color_b btn_style half" style="float: right; margin-right: 5%" ng-click="message.gotoTrade(message.getstrategy.strategy_id)">手动跟单</button>
     </div>
   </ion-content>
 </ion-view>

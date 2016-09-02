@@ -1,0 +1,85 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'ngCordova' ]
+2 info using npm@2.15.8
+3 info using node@v4.4.7
+4 verbose install initial load of C:\Users\huk\Desktop\ionic_pro\package.json
+5 warn package.json myionic@1.1.1 No repository field.
+6 warn package.json myionic@1.1.1 No license field.
+7 verbose readDependencies loading dependencies from C:\Users\huk\Desktop\ionic_pro\package.json
+8 silly cache add args [ 'ngCordova', null ]
+9 verbose cache add spec ngCordova
+10 silly cache add parsed spec Result {
+10 silly cache add   raw: 'ngCordova',
+10 silly cache add   scope: null,
+10 silly cache add   name: 'ngCordova',
+10 silly cache add   rawSpec: '',
+10 silly cache add   spec: 'latest',
+10 silly cache add   type: 'tag' }
+11 silly addNamed ngCordova@latest
+12 verbose addNamed "latest" is being treated as a dist-tag for ngCordova
+13 info addNameTag [ 'ngCordova', 'latest' ]
+14 silly mapToRegistry name ngCordova
+15 silly mapToRegistry using default registry
+16 silly mapToRegistry registry http://registry.cnpmjs.org/
+17 silly mapToRegistry data Result {
+17 silly mapToRegistry   raw: 'ngCordova',
+17 silly mapToRegistry   scope: null,
+17 silly mapToRegistry   name: 'ngCordova',
+17 silly mapToRegistry   rawSpec: '',
+17 silly mapToRegistry   spec: 'latest',
+17 silly mapToRegistry   type: 'tag' }
+18 silly mapToRegistry uri http://registry.cnpmjs.org/ngCordova
+19 verbose addNameTag registry:http://registry.cnpmjs.org/ngCordova not in flight; fetching
+20 verbose request uri http://registry.cnpmjs.org/ngCordova
+21 verbose request no auth needed
+22 info attempt registry request try #1 at 12:00:28
+23 verbose request id 90d892df9778f1ee
+24 http request GET http://registry.cnpmjs.org/ngCordova
+25 http 404 http://registry.cnpmjs.org/ngCordova
+26 verbose headers { server: 'nginx/1.4.6 (Ubuntu)',
+26 verbose headers   date: 'Tue, 02 Aug 2016 04:00:30 GMT',
+26 verbose headers   'content-type': 'application/json; charset=utf-8',
+26 verbose headers   'transfer-encoding': 'chunked',
+26 verbose headers   connection: 'keep-alive',
+26 verbose headers   'x-readtime': '8',
+26 verbose headers   'content-encoding': 'gzip' }
+27 silly get cb [ 404,
+27 silly get   { server: 'nginx/1.4.6 (Ubuntu)',
+27 silly get     date: 'Tue, 02 Aug 2016 04:00:30 GMT',
+27 silly get     'content-type': 'application/json; charset=utf-8',
+27 silly get     'transfer-encoding': 'chunked',
+27 silly get     connection: 'keep-alive',
+27 silly get     'x-readtime': '8',
+27 silly get     'content-encoding': 'gzip' } ]
+28 verbose stack Error: 404 Not Found: ngCordova
+28 verbose stack     at makeError (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:264:12)
+28 verbose stack     at CachingRegistryClient.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:250:14)
+28 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:178:7
+28 verbose stack     at Gunzip.onEnd (zlib.js:227:5)
+28 verbose stack     at emitNone (events.js:72:20)
+28 verbose stack     at Gunzip.emit (events.js:166:7)
+28 verbose stack     at endReadableNT (_stream_readable.js:921:12)
+28 verbose stack     at nextTickCallbackWith2Args (node.js:442:9)
+28 verbose stack     at process._tickCallback (node.js:356:17)
+29 verbose statusCode 404
+30 verbose pkgid ngCordova
+31 verbose cwd C:\Users\huk\Desktop\ionic_pro
+32 error Windows_NT 10.0.10586
+33 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "ngCordova"
+34 error node v4.4.7
+35 error npm  v2.15.8
+36 error code E404
+37 error 404 Not Found: ngCordova
+37 error 404
+37 error 404 'ngCordova' is not in the npm registry.
+37 error 404 Your package name is not valid, because
+37 error 404
+37 error 404  1. name can no longer contain capital letters
+37 error 404 It was specified as a dependency of 'myionic'
+37 error 404
+37 error 404 Note that you can also install from a
+37 error 404 tarball, folder, http url, or git url.
+38 verbose exit [ 1, true ]

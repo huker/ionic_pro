@@ -208,6 +208,9 @@ button.button-full{
   display: block;
   margin-top: 1.5rem;
 }
+.msgbottom .half{
+  width: 42.5%;
+}
 /*消息列表首页*/
 .msgListItem{
   border-right: none;
@@ -261,6 +264,9 @@ button.button-full{
 .msgDetail_list p,.msgDetail_list h5{
   font-size: 0.7rem;
   padding: 0 0.2rem;
+}
+.msgDetail_list ul li{
+  text-align: center;
 }
 .msglist{
   width: 100%;

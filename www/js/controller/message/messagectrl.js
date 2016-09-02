@@ -5,9 +5,9 @@
 angular.module('app.controller')
   .controller('messageCtrl',messageCtrl);
 
-messageCtrl.$inject = ['$state','msgService'];
+messageCtrl.$inject = ['$state','msgService','$ionicPopup','$scope'];
 
-function messageCtrl($state,msgService){
+function messageCtrl($state,msgService,$ionicPopup,$scope){
   var vm = this;
   vm.detailmsg = {}; //获取具体组合信息的参数（消息id和组合id）
   vm.detailList = {};
@@ -18,8 +18,16 @@ function messageCtrl($state,msgService){
   vm.getInvestList = getInvestList;
   vm.getStrategyMsg = getStrategyMsg;
   vm.getBacktest = getBacktest;
+  vm.select = {
+    currentActivity:"IB",
+    name:"select",
+    money:""
+  };
+  vm.activities= [
+    "IB","南华期货","SAXO","iFAST"
+  ]
 
-	/**
+  /**
    * 功能
    * readMsg 消息阅读跳转
    * strategyDetail 消息中的组合策略跳转
@@ -27,6 +35,8 @@ function messageCtrl($state,msgService){
   vm.readMsg = readMsg;
   vm.strategyDetail = strategyDetail;
   vm.gotoTrade = gotoTrade;
+  vm.tradeConfirm = tradeConfirm;
+
   function readMsg(id){
     $state.go('tabs.msgdetail');
     var msg_id = {"msg_id":id};
@@ -38,11 +48,35 @@ function messageCtrl($state,msgService){
     getStrategyMsg(strategy_id);
   }
   function gotoTrade(select){
-    $state.go('tabs.trade');
+      var myPop = $ionicPopup.show({
+      title:"交易确认",
+      template: '<label for="name">输入金额（元）:</label><input type="text" ng-model="message.select.money" placeholder="100000"><div>'+
+      '<label for="name">选择交易账户:</label>'+
+    '<select ng-model="message.select.currentActivity" class="form-control" ng-options="act for act in message.activities">'+
+      '</select></div>',
+      scope:$scope,
+      buttons: [
+        {
+          text:'<b>取消</b>',
+          type:'button-energized'
+        },
+        {
+          text: '<b>确认交易</b>',
+          type: 'button-positive',
+          onTap: function(e) {
+            tradeConfirm(vm.select.currentActivity,vm.select.money);
+          }
+        },
+      ]
+    })
+    myPop.then(function(){
+
+    });
     console.log(select)
   }
-
-
+  function tradeConfirm(select,money){
+    console.log(arguments)
+  }
   //get消息列表 msgList
   function getMsgList(){
     msgService.getmsglist().success(function(data){
