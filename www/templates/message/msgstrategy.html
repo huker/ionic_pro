@@ -1,10 +1,16 @@
 <ion-view view-title="策略详情">
-  <ion-content class="padding">
-    <h2>{{message.strategy.name}}</h2>
-    <p>起投金额：{{message.strategy.money}}</p>
-    <p>预期收益率：{{message.strategy.returnrate}}</p>
-    <return-chart id="strategychart" legend="message.strategy.legend" data="message.strategy.data"></return-chart>
-    <table class="assetTable" border="1px">
+  <ion-content>
+    <div class="strategy_card">
+      <h2>{{message.strategy.name}}
+        <button class="button button-positive">查看回测</button>
+      </h2>
+      <p>
+        <span>起投金额：{{message.strategy.money}}</span>
+        <span>预期收益率：{{message.strategy.returnrate}}</span>
+      </p>
+    </div>
+    <return-chart class="padding" id="strategychart" legend="message.strategy.legend" data="message.strategy.data"></return-chart>
+      <table class="assetTable" border="1px">
       <tr>
         <th>资产类别</th><th>细分类型</th><th>配置份额</th><th>配置占比</th>
       </tr>
@@ -15,9 +21,10 @@
         <td>{{item.rate}}</td>
       </tr>
     </table>
+
     <div class="msgbottom">
-      <a class="button button-positive" href="#/tab/message/msgdetail/msgpage/msgstrategy/msgbacktest">查看回测</a>
-      <a class="button button-positive" href="#/tab/message/trade">执行交易</a>
+      <button class="button  btn_style half btn_color" style="float: left; margin-left: 5%" ng-click="message.gotoTrade(message.getstrategy.strategy_id)">萝卜跟单</button>
+      <button class="button btn_color_b btn_style half" style="float: right; margin-right: 5%" ng-click="message.gotoTrade(message.getstrategy.strategy_id)">手动跟单</button>
     </div>
   </ion-content>
 </ion-view>

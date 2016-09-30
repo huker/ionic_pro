@@ -80,19 +80,19 @@ function messageCtrl($state,msgService,$ionicPopup,$scope){
   //get消息列表 msgList
   function getMsgList(){
     msgService.getmsglist().success(function(data){
-      console.log(data);
+      //console.log(data);
     })
   }
   //得到投资组合列表 list
   function getInvestList(select_id){
     msgService.getinvestlist(select_id).success(function(data){
-      console.log(data);
+      //console.log(data);
     })
   }
   //得到具体投资组合信息
   function getStrategyMsg(strategy_id){
     msgService.getstrategymsg(strategy_id).success(function(data){
-      console.log(data);
+      //console.log(data);
     })
   }
   //获取回测数据 参数未写

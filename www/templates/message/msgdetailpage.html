@@ -1,7 +1,10 @@
 <ion-view view-title="交易执行">
   <ion-content>
-    <h2 style="text-align: center;padding: 1.5rem 0"><a href="#/tab/message/msgdetail/msgpage/msgstrategy">{{message.getstrategy.name}}</a></h2>
-    <ul class="list">
+    <div class="strategy_card" style="text-align: center">
+    <h2 style="padding: 0.5rem 0">{{message.getstrategy.name}}</h2>
+      <button class="button button-positive">策略详情</button>
+    </div>
+      <ul class="list">
       <li class="item">投资经理：QStrategy</li>
       <li class="item">起投金额：{{message.getstrategy.money}} 元</li>
       <li class="item">预期收益率：{{message.getstrategy.returnrate}}</li>

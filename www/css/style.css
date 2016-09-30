@@ -284,6 +284,17 @@ button.button-full{
   padding: 1.2rem 1rem;
   margin-top: 0.3rem;
 }
+
+.strategy_card{
+  background: #ffa500;
+  color: #ffffff;
+  padding: 1.2rem;
+}
+
+.strategy_card h2{
+  color: #ffffff;
+}
+
 /*交易*/
 .luobo_trade{
   background: #ffa500 !important;
@@ -295,6 +306,11 @@ button.button-full{
 }
 .trade_con{
 }
+
+
+
+
+
 
 /*个人中心*/
 .centerTop{
